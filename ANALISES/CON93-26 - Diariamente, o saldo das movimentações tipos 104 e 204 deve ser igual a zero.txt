@@ -1,0 +1,10 @@
+CON93-26 - Diariamente, o saldo das movimentações tipos 104 e 204 deve ser igual a zero
+
+na data citada no erro .. informe 000 para o tipo de operação financeira
+ou 155 quando for a debito
+
+
+LCDTCE_ContaCorrente="001|1272-6|10911-8|1|0|1|00|000000|299|0.000.000/0000-00
+LCDTCE_ContaCorrente="237|1887|10200-8|1|0|1|00|000000|105|00.000.000/0000-00"
+LCDTCE_ContaCorrente="237|1887|10200-8|1|0|1|00|000000|299|00.000.000/0000-00"
+LCDTCE_ContaCorrente="748|0805|31133-2|1|0|1|00|000000|105|00.000.000/0000-00"

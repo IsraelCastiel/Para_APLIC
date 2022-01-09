@@ -1,0 +1,7 @@
+select l.seq_grupo_lanc,mascara,c.i_contas,l.valor_lancamento,dateformat(l.data_lancamento,'dd/MM/yyyy'),tipo_lancamento,l.i_recursos,l.descricao from sapo.lancamentos as l key join sapo.contas as c
+where l.i_entidades = 1 and c.i_entidades= 1 and l.ano_exerc = 2018 
+and l.mes_lancamento = 3
+and c.i_contas = 49672
+--and l.tipo_lancamento = 'd'
+--and l.valor_lancamento = 2339.42
+--and l.seq_grupo_lanc = 6861

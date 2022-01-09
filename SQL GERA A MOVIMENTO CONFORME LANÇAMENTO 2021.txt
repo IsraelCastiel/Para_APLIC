@@ -1,0 +1,41 @@
+//drop table lancamento_contabil_diario_tce
+create table lancamento_contabil_diario_tce(ECTCE_Codigo as char(50),LCDTCE_Numlancamento_contabil_diario_tce as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255));
+
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\lancamento_contabil_diario_tce.csv' delimited by ';';
+
+
+delete lancamento_contabil_diario_tce
+where ectce_codigo = 'ectce_codigo';
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+commit;
+
+
+select
+'<ROW ECTCE_Codigo="' + string(left(masca,11)) + '" MCC_Data="' + string(dat) + '" TMC_Codigo="' + string(tmc) + '" MCC_ValorDebito="' +
+string(valor_deb) + '" MCC_ValorCredito="' +
+string(valor_cre) + '"></ROW>'
+
+FROM (select masca = left(contas.mascara,11), dat = mcc_data, tmc = tmc_codigo,
+valor_deb = sum(lcdtce_valordebito),
+valor_cre = sum(lcdtce_valorcredito),
+tam = argn(grau_conta,1,2,3,4,5,7,9,11)
+from lancamento_contabil_diario_tce l, sapo.contas
+where contas.i_entidades = 1 and
+contas.i_plano_contas = 4 and
+left(contas.mascara,tam) = left(l.ectce_codigo,tam) and
+(contas.exerc_fin is null or
+contas.exerc_fin = 2021) and
+contas.exerc_ini <> 2022
+group by masca, tam, mcc_data, tmc_codigo
+having valor_deb <> 0 or valor_cre <> 0
+order by mcc_data, tmc_codigo, masca) AS Tab;
+output to 'C:\ASSEMBLEIA\Movimento.txt' FORMAT ASCII QUOTE '' DELIMITED BY '';

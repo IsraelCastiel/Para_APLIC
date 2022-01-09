@@ -1,0 +1,28 @@
+ORC67-19 - O crédito adicional financiado por superávit financeiro (ALTLOA_TipoRecurso = 4) deve ter o grupo da destinação de recurso igual a 3
+
+
+emito o relatorio de suplemantações com informando a data inicial e final 
+marco o cheque box Fundamento e informo o mesmo que é DECR_Numero
+
+
+note que as despesas que informaram nessa suplementação são do recurso 2000 que está informado 
+o grupo 1- recursos exercícios correntes, porém a origem do recurso da suplementação
+ é Superavit Financeiro, nesse caso o grupo da fonte de recurso deveria 
+ ser 3 - recursos exercícios anteriores e outra utilizaram despesas que já existiam no orçamento ..
+
+
+pra corrigir .. só mudar pra 3 
+se for corrigir certinho no sistema tem q cadastrar outras despesas com o grupo da fonte de recurso 3, 
+se for alterar somente na especificação da fonte de recurso de 1 para 3 vai dar problema pq vai alterar as despesas que já foram enviadas e foram com o grupo 1
+
+para esse caso decretos de superavit fianceiro e campo DRGRP_Codigo tem que ser 3 tanto na lançamento quanto na alteração loa 
+altere também empenhos liquidações e pagamentos conforme o projeto atividade
+
+
+O JEITO MAIS FACIL 
+
+MUDEI NA ALTERAÇÃO LOA TODOS OS DECRETOS PRA 3 E TODOS OS SEUS RESPECTIVOS LANÇAMENTOS NA LANÇAMENTO PRA 3
+
+
+
+

@@ -1,0 +1,114 @@
+call bethadba.pg_habilitartriggers('off');
+create variable @@conn_usr_atualizando_saldo_conta Integer;
+insert into sapo.conexoes_usr values (connection_property('number'),current user,2018,1,null,null,1,4,3,0);
+
+// EMPENHOS
+update sapo.lancamentos l
+set l.i_recursos = e.i_recursos, l.i_detalhe_especif_rec = e.i_detalhe_especif_rec
+from sapo.lancamentos l key join sapo.contas c, sapo.empenhos e
+where l.ano_exerc = 2021 and
+l.i_entidades = 1 and
+(left(mascara,7) = 6221301 OR
+ left(mascara,4) = 8211) and
+l.i_recursos is null and
+l.i_empenhos is not null and
+l.i_entidades = e.i_entidades and
+l.ano_exerc = e.ano_exerc and
+l.i_empenhos = e.i_empenhos;
+commit;
+
+
+
+
+// ANULAÇÃO DE EMPENHOS
+update sapo.lancamentos l
+set l.i_recursos = e.i_recursos, l.i_detalhe_especif_rec = e.i_detalhe_especif_rec
+from sapo.lancamentos l key join sapo.contas c, sapo.empenhos e key join sapo.anl_empenhos a
+where l.ano_exerc = 2021 and
+l.i_entidades = 1 and
+(left(mascara,7) = 6221301 OR
+ left(mascara,4) = 8211) and
+l.i_recursos is null and
+l.i_anula_empenhos is not null and
+l.i_entidades = e.i_entidades and
+l.ano_exerc = e.ano_exerc and
+l.i_anula_empenhos = a.i_anula_empenhos;
+commit;
+
+
+
+
+//LIQUIDAÇÃO
+update sapo.lancamentos l
+set l.i_recursos = e.i_recursos, l.i_detalhe_especif_rec = e.i_detalhe_especif_rec
+from sapo.lancamentos l key join sapo.contas c, sapo.empenhos e key join sapo.liquidacao liq
+where l.ano_exerc = 2021 and
+l.i_entidades = 1 and
+(left(mascara,7) = 6221301 OR
+ left(mascara,4) = 8211) and
+l.i_recursos is null and
+l.i_liquidacao is not null and
+l.i_descontos_liquidacoes is null and
+l.i_entidades = liq.i_entidades and
+l.ano_exerc = liq.ano_exerc and
+l.i_liquidacao = liq.i_liquidacao;
+commit;
+
+
+
+
+//ANULAÇÃO DE LIQUIDAÇÃO
+update sapo.lancamentos l
+set l.i_recursos = e.i_recursos, l.i_detalhe_especif_rec = e.i_detalhe_especif_rec
+from sapo.lancamentos l key join sapo.contas c, sapo.empenhos e key join sapo.liquidacao liq key join sapo.anl_liquidacoes a
+where l.ano_exerc = 2021 and
+l.i_entidades = 1 and
+(left(mascara,7) = 6221301 OR
+ left(mascara,4) = 8211) and
+l.i_recursos is null and
+l.i_anula_liquid is not null and
+l.i_entidades = liq.i_entidades and
+l.ano_exerc = liq.ano_exerc and
+l.i_anula_liquid = a.i_anula_liquid;
+commit;
+
+
+
+
+//ORDEM DE PAGAMENTO
+update sapo.lancamentos l
+set l.i_recursos = e.i_recursos, l.i_detalhe_especif_rec = e.i_detalhe_especif_rec
+from sapo.lancamentos l key join sapo.contas c, sapo.empenhos e key join sapo.ordens o
+where l.ano_exerc = 2021 and
+l.i_entidades = 1 and
+(left(mascara,7) = 6221301 OR
+ left(mascara,4) = 8211) and
+l.i_recursos is null and
+l.i_ordens is not null and
+l.i_entidades = o.i_entidades and
+l.ano_exerc = o.ano_exerc and
+l.i_ordens = o.i_ordens;
+commit;
+
+
+
+
+//ANULAÇÃO DE ORDEM DE PAGAMENTO
+update sapo.lancamentos l
+set l.i_recursos = e.i_recursos, l.i_detalhe_especif_rec = e.i_detalhe_especif_rec
+from sapo.lancamentos l key join sapo.contas c, sapo.empenhos e key join sapo.ordens o key join sapo.anl_ordens a
+where l.ano_exerc = 2021 and
+l.i_entidades = 1 and
+(left(mascara,7) = 6221301 OR
+ left(mascara,4) = 8211) and
+l.i_recursos is null and
+l.i_anula_ordens is not null and
+l.i_entidades = o.i_entidades and
+l.ano_exerc = o.ano_exerc and
+l.i_anula_ordens = a.i_anula_ordens;
+commit;
+
+
+
+call bethadba.pg_habilitartriggers('on');
+commit

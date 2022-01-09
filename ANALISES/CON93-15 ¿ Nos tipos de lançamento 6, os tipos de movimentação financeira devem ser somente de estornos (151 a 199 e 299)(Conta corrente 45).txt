@@ -1,0 +1,13 @@
+CON93-15 ¿ Nos tipos de lançamento 6, os tipos
+ de movimentação financeira devem ser somente
+ de estornos (151 a 199 e 299)(Conta corrente 45)
+ 
+DE --> no erro aponta ENT_Codigo:1115609; Exercicio:2020; ECTCE_Codigo:11111500200; MCC_Data:24/11/2020; TMC_Codigo:6;
+ TMOVF_Codigo:205
+PARA -->  no erro aponta ENT_Codigo:1115609; Exercicio:2020; ECTCE_Codigo:11111500200; MCC_Data:24/11/2020; TMC_Codigo:6;
+ TMOVF_Codigo:299
+ 
+ 
+ 
+ 
+ 

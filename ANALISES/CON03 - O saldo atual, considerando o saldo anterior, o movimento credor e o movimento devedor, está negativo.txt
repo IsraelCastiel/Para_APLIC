@@ -1,0 +1,16 @@
+CON03 - O saldo atual, considerando o saldo anterior, o movimento credor e o movimento devedor, está negativo
+
+81221010100
+81131050100
+
+
+vai existir uma conta do grupo 7 com a  mesma mascara..
+somente o primeiro digito q é 7 ao invés de 8...
+vc pode debitar ela e creditar a conta q está negativa..
+
+
+  <ROW ECTCE_Codigo="81221010100" LCDTCE_NumLancamento="64948" LCDTCE_NumSequencial="1" MCC_Data="11/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="00000000001/2020|00000000000/2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="77500.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="71221010000" LCDTCE_NumLancamento="64948" LCDTCE_NumSequencial="2" MCC_Data="11/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="00000000001/2020|00000000000/2020" LCDTCE_ValorDebito="77500.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="81131050100" LCDTCE_NumLancamento="64948" LCDTCE_NumSequencial="3" MCC_Data="11/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="00.360.305/4327-56" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="2431209.31" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="71131050000" LCDTCE_NumLancamento="64948" LCDTCE_NumSequencial="4" MCC_Data="11/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="00.360.305/4327-56" LCDTCE_ValorDebito="2431209.31" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+

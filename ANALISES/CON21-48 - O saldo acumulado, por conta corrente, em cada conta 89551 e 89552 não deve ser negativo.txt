@@ -1,0 +1,7 @@
+
+No erro aponta saldo negativo para empenhos de 2020
+
+ECTCE_Codigo:89551000000; LCDTCE_ContaCorrente:06|005|010923/2020 
+Saldo acumulado:-3039,69
+
+nas contas 89552 e 89551 mudo para 00|000|000000/2019

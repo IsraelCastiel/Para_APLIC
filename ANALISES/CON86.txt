@@ -1,0 +1,33 @@
+Se os valores das diferenças entre as fontes se elas nao batem
+  fazer um lançamento pra cada fonte debitando a 8211101 e creditando a 72112
+  Sempre observando que quando a diferença for +o 8 sempre sera debito e se estiver  negativo o 7 lançamento sera credito
+OBS.: OBSERVAR SE A 82114 ESTA ZERADO 
+CASO NÃO ESTEJA REALIZAR ESSE LANÇAMENTO
+
+  <ROW ECTCE_Codigo="82114000000" LCDTCE_NumLancamento="43157" LCDTCE_NumSequencial="1"  MCC_Data="25/12/2017" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="19008620.44" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="43157" LCDTCE_NumSequencial="2"  MCC_Data="25/12/2017" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="19008620.44" LCDTCE_Historico="."></ROW>
+
+  <ROW ECTCE_Codigo="82114000000" LCDTCE_NumLancamento="43157" LCDTCE_NumSequencial="3"  MCC_Data="25/12/2017" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|18|000000" LCDTCE_ValorDebito="9466884.71" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="43157" LCDTCE_NumSequencial="4" MCC_Data="25/12/2017" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|18|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="9466884.71" LCDTCE_Historico="."></ROW>
+ 
+______________________________________________
+
+ 
+   <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="1" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="1024375.2" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="72111000000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="2" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="1024375.2" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+   
+   <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="3" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|27|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="144610.38" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="4" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|27|000000" LCDTCE_ValorDebito="144610.38" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+   
+   <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="5" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|19|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="76574.28" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="6" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|19|000000" LCDTCE_ValorDebito="76574.28" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+   
+   
+   <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="7" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|18|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="117047.44" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="8" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|18|000000" LCDTCE_ValorDebito="117047.44" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="9" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|14|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="6553.03" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="10" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|14|000000" LCDTCE_ValorDebito="6553.03" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="11" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|02|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="11775.78" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="12" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|02|000000" LCDTCE_ValorDebito="11775.78" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="13" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|01|000000" LCDTCE_ValorDebito="1374998.57" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+   <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="19667" LCDTCE_NumSequencial="14" MCC_Data="12/08/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|01|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="1374998.57" LCDTCE_Historico="."></ROW>

@@ -1,0 +1,18 @@
+<<<<<<< HEAD
+CON93-3 ¿ No lançamento a débito o tipo de movimentação financeira deve ser entre 101 e 198, exceto o 102
+
+
+TMOVF_Codigo:299
+
+na conta 11111020000
+
+=======
+CON93-3 ¿ No lançamento a débito o tipo de movimentação financeira deve ser entre 101 e 198, exceto o 102
+
+
+TMOVF_Codigo:299
+
+na conta 11111020000
+
+>>>>>>> main
+para esse lançamento foi feito um estorno sendo assim para que não peça credor informe 157

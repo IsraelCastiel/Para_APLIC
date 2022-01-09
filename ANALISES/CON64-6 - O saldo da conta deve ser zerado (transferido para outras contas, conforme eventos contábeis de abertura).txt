@@ -1,0 +1,33 @@
+CON64-6 - O saldo da conta deve ser zerado (transferido para outras contas, conforme eventos contábeis de abertura)
+
+23711030000
+
+23713030000 
+
+
+mude para 23711020000
+
+
+israel
+<ROW ECTCE_Codigo="23711030000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="1" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="231.18" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23713030000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="3" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="854797.92" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711020000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="2" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="231.18" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711020000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="4" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="854797.92" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711030000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="5" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="231.18" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23713030000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="6" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="854797.92" LCDTCE_ValorCredito=".00" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711020000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="7" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="231.18" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711020000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="8" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="854797.92" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+
+
+
+xapo
+<ROW ECTCE_Codigo="23711030000" LCDTCE_NumLancamento="29" LCDTCE_NumSequencial="1212" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="231.18" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23713030000" LCDTCE_NumLancamento="29" LCDTCE_NumSequencial="1225" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="854797.92" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711020000" LCDTCE_NumLancamento="29" LCDTCE_NumSequencial="3000" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="231.18" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711030000" LCDTCE_NumLancamento="29" LCDTCE_NumSequencial="3001" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="231.18" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23713020000" LCDTCE_NumLancamento="29" LCDTCE_NumSequencial="3003" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="854797.92" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23713030000" LCDTCE_NumLancamento="29" LCDTCE_NumSequencial="3004" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="854797.92" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+             
+     
+				
+

@@ -1,0 +1,38 @@
+show datestyle
+select now()
+
+select sum(valr_emp) from aplictce.empenho
+where cd_exercicio = 2021 and EXTRACT(month from data_emp)=1
+															
+select sum(valr_emp) from aplictce.empenho                  
+where cd_exercicio = 2021 and EXTRACT(month from data_emp)=2
+															
+select sum(valr_emp) from aplictce.empenho                  
+where cd_exercicio = 2021 and EXTRACT(month from data_emp)=3
+															
+select sum(valr_emp) from aplictce.empenho                  
+where cd_exercicio = 2021 and EXTRACT(month from data_emp)=4
+															
+select sum(valr_emp) from aplictce.empenho                  
+where cd_exercicio = 2021 and EXTRACT(month from data_emp)=5
+															
+select sum(valr_emp) from aplictce.empenho                  
+where cd_exercicio = 2021 and EXTRACT(month from data_emp)=6
+															
+select sum(valr_emp) from aplictce.empenho                  
+where cd_exercicio = 2021 and EXTRACT(month from data_emp)=7
+
+
+select  *  from aplictce.contratos
+where EXTRACT(month from data_inicio_vigencia)=1
+
+
+select * from aplictce.pagamento_nob
+
+
+select * from aplictce.liquidacao
+where cd_exercicio = 2021 and data_liq >= '2021-01-01' and data_liq <= '2021-01-31'
+
+
+
+

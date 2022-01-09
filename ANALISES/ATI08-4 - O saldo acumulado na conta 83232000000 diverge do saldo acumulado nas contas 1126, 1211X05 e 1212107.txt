@@ -1,0 +1,23 @@
++++
+
+ID REGISTRO 	ATRIBUTOS 	DESCRICAO
+ENT_Codigo:1125137; Exercicio:2021; Saldo 83232000000:0
+
+Saldo 11260000000(1500) + 12111050000(0) + 12112050000(0) + 12113050000(0) + 12114050000(0) + 12115050000(0) + 12121070000(0):1500
+
+ATI08-4 - O saldo acumulado na conta 83232000000 diverge do saldo acumulado nas contas 1126, 1211X05 e 1212107
+
+para esse questão foi registrado alguns lotes como 
+não tributario então o user alterou algumas contas do grupo  8 e não alterou a 11260000000
+
+
+
+11261029900 - DÍVIDA ATIVA DE OUTRAS MULTAS (P)
+11251990000 - mudei para
+
+11262029900 - DÍVIDA ATIVA DE OUTRAS MULTAS (P)
+11253019900 - mudei para
+
+
+
+

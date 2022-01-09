@@ -1,0 +1,8 @@
+select LCDTCE_ContaCorrente,saldo = sum(LCDTCE_ValorCredito) - sum(LCDTCE_ValorDebito) from lancamento_contabil_diario_tce
+where left(ECTCE_Codigo,7) = 8211302 / / 82114
+group by  LCDTCE_ContaCorrente
+having saldo <> 0 
+order by LCDTCE_ContaCorrente
+
+
+dependendo da conta mude de 7 para o numero de digitos da  conta 

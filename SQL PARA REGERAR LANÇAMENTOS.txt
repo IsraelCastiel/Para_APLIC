@@ -1,0 +1,20 @@
+call bethadba.pg_habilitartriggers('off');
+insert into sapo.conexoes_usr values (connection_property('number'),current user,2017,1,null,null,1,4,3,0);
+
+
+update sapo.eventos_contabeis_controle 
+set dt_alteracao = now()
+commit;
+call bethadba.pg_setoption('fire_triggers','on');
+
+
+
+
+
+call bethadba.pg_habilitartriggers('off');
+insert into sapo.conexoes_usr values (connection_property('number'),current user,2018,1,null,null,1,4,3,0);
+create variable @@conn_usr_atualizando_saldo_conta Integer;
+update sapo.contas
+set conta_banco = '624003-6'
+where i_entidades = 1 and i_contas = 106380 and conta_banco = '624.003-6';commit;
+call bethadba.pg_habilitartriggers('on');

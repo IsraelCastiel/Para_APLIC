@@ -1,0 +1,25 @@
+update _lanc08
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit
+
+alter table _lanc08 modify lcdtce_valordebito numeric(14,2);
+alter table _lanc08 modify lcdtce_valorcredito numeric(14,2);
+commit
+
+select contacorrente = left(lcdtce_contacorrente,18),
+saldo = sum(lcdtce_valorcredito) - sum(lcdtce_valordebito)
+from _lanc08
+where left(ectce_codigo,4) = 6322
+group by contacorrente
+having saldo <> 0
+
+
+select ectce_codigo,
+contacorrente = left(lcdtce_contacorrente,18),
+saldo = sum(lcdtce_valordebito) - sum(lcdtce_valorcredito)
+from _lanc08
+where left(ectce_codigo,4) in(5321,5311)
+group by ectce_codigo, contacorrente
+having saldo <> 0
+order by ectce_codigo

@@ -1,0 +1,3 @@
+ORC54-1 - A soma do saldo das contas filhas de 52212000000 deve ser igual à soma dos saldos das contas 52213010000, 52213020000, 52213030000, 52213040000, 52213050000, 52213060000, e 52213070000(tabela LANCAMENTO_CONTABIL_DIARIO_TCE)
+
+regera lançamento das suplementações..

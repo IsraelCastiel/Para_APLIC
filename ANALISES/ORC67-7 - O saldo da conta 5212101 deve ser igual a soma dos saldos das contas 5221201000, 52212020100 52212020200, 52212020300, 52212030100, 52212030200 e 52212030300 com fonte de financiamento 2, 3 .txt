@@ -1,0 +1,23 @@
+ORC67-7 - O saldo da conta 5212101 deve ser igual a soma dos saldos das contas 5221201000, 
+52212020100 52212020200, 52212020300, 52212030100, 52212030200 e 52212030300 com fonte de financiamento 2, 3 e 7
+ 
+  Debito a 5212101 e credita a 6211
+ 
+  lanc
+ 
+  <ROW ECTCE_Codigo="62110000000" LCDTCE_NumLancamento="37763" LCDTCE_NumSequencial="3" MCC_Data="11/10/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="1.1.1.8.01.1.1.00.00.00|0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="2480500.00" LCDTCE_Historico="Alteracao de previsao de receitas"></ROW>
+  <ROW ECTCE_Codigo="52121010000" LCDTCE_NumLancamento="37763" LCDTCE_NumSequencial="4" MCC_Data="11/10/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="1.1.1.8.01.1.1.00.00.00|0|1|00|000000|01|00" LCDTCE_ValorDebito="2480500.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Alteracao de previsao de receitas"></ROW>
+ 
+  movimento
+
+  <ROW ECTCE_Codigo="50000000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="2137000.00" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="52000000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="2137000.00" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="52100000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="2137000.00" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="52120000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="2137000.00" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="52121000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="2137000.00" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="52121010000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="2137000.00" MCC_ValorCredito="0.00"></ROW>
+ 
+  <ROW ECTCE_Codigo="60000000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="4534725.38"></ROW>
+  <ROW ECTCE_Codigo="62000000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="4534725.38"></ROW>
+  <ROW ECTCE_Codigo="62100000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="2137000.00"></ROW>
+  <ROW ECTCE_Codigo="62110000000" MCC_Data="07/10/2018" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="2137000.00"></ROW>

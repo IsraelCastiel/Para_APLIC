@@ -1,0 +1,2 @@
+select e.i_eventos,e.nome,e.codigo_tce,e.tipo_pd,m.i_funcionarios,m.i_competencias from bethadba.movimentos as m key join bethadba.eventos as e
+where m.i_entidades = 1 and month(i_competencias)=6 and year (i_competencias)=2019 and e.codigo_tce like '%91'

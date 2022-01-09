@@ -1,0 +1,22 @@
+/*TIPO_BEM_MOVIMENTACAO
+para sapezal
+
+5	REVERSÃO DE REDUÇÃO AO VALOR RECUPERÁVEL
+6	REDUÇÃO AO VALOR RECUPERÁVEL
+1	BAIXA
+2	DEPRECIAÇÃO/AMORTIZAÇÃO/EXAUSTÃO
+3	REAVALIAÇÃO PARA MAIS
+4	REAVALIAÇÃO PARA MENOS
+*/
+
+
+select * from relacao_bens_movimentacao
+where RBP_Codigo in (1120013757,1120013745)
+GROUP BY RBM_TipoMovimentacao
+
+
+select * from relacao_bens_patrimoniais
+where RBP_Descricao like '%VENTILADOR DE TETO 3 PAS EM METAL/ ARGE%'
+
+
+

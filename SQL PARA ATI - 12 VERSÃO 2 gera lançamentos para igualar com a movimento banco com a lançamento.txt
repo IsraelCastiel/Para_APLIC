@@ -1,0 +1,132 @@
+eu importo a lançamento desde
+carga inicial e a movimento banco somente a do mês 
+que estou gerando
+
+confiro o tipo de ocorrencia igual a 6 se o saldo da 
+tabela conciliação bancaria se bate com o balancete de verificação 
+das contas 111 e 114
+
+drop table lancamento_contabil_diario_tce;
+drop table movimento_banco;
+
+create table lancamento_contabil_diario_tce(ECTCE_Codigo as char(50),LCDTCE_Numlancamento_contabil_diario_tce as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255))
+
+create table movimento_banco(BCO_Codigo as char(50),AGN_Codigo as char(50),CCBCO_Numero as char(50),CCBCO_Tipo as char(50),MOVBC_MesReferencia as char(50),MOVBC_ValDebito as char(50),
+MOVBC_ValCredito as char(50),MOVBC_Saldo as char(50));
+
+
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\99.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\01.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\02.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\03.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\04.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\05.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\06.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\07.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\08.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\09.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\10.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\11.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\12.csv' delimited by ';';
+
+
+input into movimento_banco from 'C:\ASSEMBLEIA\movimento_banco.csv' delimited by ';';
+
+delete lancamento_contabil_diario_tce
+where ectce_codigo = 'ectce_codigo';
+
+delete movimento_banco
+where bco_codigo = 'bco_codigo';
+
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit
+
+
+update movimento_banco
+set movbc_saldo = replace(movbc_saldo,',','.');
+commit
+
+alter table movimento_banco modify movbc_saldo numeric(14,2);
+commit
+
+// GERA LANÇAMENTOS CONTÁBEIS PARA IGUALAR O SALDO DA MOV BANCO COM LANC CONTABIL
+
+select '  <ROW ECTCE_Codigo="' || conta || '" LCDTCE_Numlancamento_contabil_diario_tce="4733" LCDTCE_NumSequencial="' || string(number(*)) || 
+'" MCC_Data="01/04/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="' || contacorrente || '|0|1|00|000000|' || 
+if if movbc_saldo > saldo_lanc then movbc_saldo - saldo_lanc else 0.00 endif <> 0 then '104' else '204' endif ||'|00.000.000/0000-00' || '" LCDTCE_ValorDebito="' || 
+if movbc_saldo > saldo_lanc then movbc_saldo - saldo_lanc else 0.00 endif || '" LCDTCE_ValorCredito="' ||
+if movbc_saldo < saldo_lanc then saldo_lanc - movbc_saldo else 0.00 endif || 
+'" LCDTCE_Historico="Ajuste no saldo bancário"></ROW>'
+from (select conta = min(ectce_codigo),
+contacorrente = left(lcdtce_contacorrente,locate(lcdtce_contacorrente,'000|','1') - 12),
+movbc_saldo,
+saldo_lanc = isnull(sum(lcdtce_valordebito),0) - isnull(sum(lcdtce_valorcredito),0)
+
+from lancamento_contabil_diario_tce l, movimento_banco m
+where left(ectce_codigo,3) in(111,114) and
+left(lcdtce_contacorrente,locate(lcdtce_contacorrente,'000|','1') - 12) = right('000' || bco_codigo,3) || '|' || agn_codigo || '|' || ccbco_numero || '|' || ccbco_tipo
+
+group by contacorrente, movbc_saldo
+having movbc_saldo <> saldo_lanc
+
+union all
+
+select conta = min(ectce_codigo),
+contacorrente = left(lcdtce_contacorrente,locate(lcdtce_contacorrente,'000|','1') - 12),
+movbc_saldo = 0.00,
+saldo_lanc = isnull(sum(lcdtce_valordebito),0) - isnull(sum(lcdtce_valorcredito),0)
+
+from lancamento_contabil_diario_tce l
+where left(ectce_codigo,3) in(111,114) and
+left(ectce_codigo,7) <> 1111101 and
+not exists(select 1 from movimento_banco m
+           where left(lcdtce_contacorrente,locate(lcdtce_contacorrente,'000|','1') - 12) = right('000' || bco_codigo,3) || '|' || agn_codigo || '|' || ccbco_numero || '|' || ccbco_tipo)
+
+group by contacorrente
+having (movbc_saldo <> 0 or saldo_lanc <> 0)
+order by contacorrente) as tab;
+output to 'C:\ASSEMBLEIA\lanca.txt' FORMAT ASCII QUOTE '' DELIMITED BY ''
+
+
+// --------------------- checa se existe conta na movimento banco que não existe na lancamento_contabil_diario_tce
+select agencia = agn_codigo,
+conta = ccbco_numero,
+saldo = MOVBC_Saldo
+
+from movimento_banco m
+where MOVBC_Saldo <> 0 and
+not exists(select 1 from lancamento_contabil_diario_tce l
+           where left(lcdtce_contacorrente,locate(lcdtce_contacorrente,'000|','1') - 12) = right('000' || bco_codigo,3) || '|' || agn_codigo || '|' || ccbco_numero || '|' || ccbco_tipo)
+
+// ---------------------------checa se existe na lancamento_contabil_diario_tce e não existe no cadastro de contas do sapo
+
+select ectce_codigo, 
+contacorrente = left(lcdtce_contacorrente,locate(lcdtce_contacorrente,'000|','1') - 12),
+saldo_sapo = sum(lcdtce_valordebito) - sum(lcdtce_valorcredito)
+from lancamento_contabil_diario_tce
+where left(ectce_codigo,4) = 1111 and
+left(ectce_codigo,7) <> 1111101 and
+not exists(select 1 from sapo.contas 
+                    JOIN sapo.bancos ON (contas.i_entidades = bancos.i_entidades AND
+                                         contas.i_bancos = bancos.i_bancos)
+                    where RIGHT('000' || bancos.numero, 3) || '|' || 
+                                                LEFT(numero_agencia, 10) || '|' || 
+                                                isnull(string(conta_banco),' ') || '|' || 
+                                                isnull(string((if contas.bancaria = 'A' then '1'
+                                                                else if contas.bancaria in('C','P') then '3'
+                                                                else if contas.bancaria = 'V' then '4'
+                                                                endif endif endif)),' ') = left(lcdtce_contacorrente,locate(lcdtce_contacorrente,'000|','1') - 12) and
+(exerc_ini = 2020 or 
+exerc_fin is null) and
+contas.i_entidades = 1 and
+i_plano_contas = 4)
+group by ectce_codigo, contacorrente
+having saldo_sapo <> 0
+order by contacorrente

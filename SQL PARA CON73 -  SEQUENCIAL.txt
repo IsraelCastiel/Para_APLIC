@@ -1,0 +1,29 @@
+// output sapo.lancamentos
+call bethadba.pg_habilitartriggers('off');
+insert into sapo.conexoes_usr values (connection_property('number'),current user,2018,1,null,null,1,4,3,0);
+create variable @@conn_usr_atualizando_saldo_conta Integer;
+update sapo.lancamentos
+set seq_grupo_lanc = seq_grupo
+from(select l.i_entidades as entid,
+l.ano_exerc as ano_l,
+l.seq_grupo_lanc as seq_grupo1, 
+l.i_lancamentos as lanca,
+seq_grupo = 624 +
+            DENSE_RANK() OVER ( ORDER BY  l.i_liquidacao,l.ano_empenho,l.i_empenhos,l.i_ordens,l.i_despexs,l.i_despesas,l.i_receitas,l.i_rec_lanc,l.i_transferencias,l.i_lote_arr,l.i_arrecadacoes,l.i_suplementacoes,l.i_prestacoes,l.i_anula_empenhos,
+            l.i_anula_ordens,l.i_anula_despexs,l.i_anula_reclanc,l.i_anula_arrecadacoes,l.i_anl_prestacoes,l.i_anula_liquid,l.i_anula_restos,l.i_restos,l.i_canc_restos,l.i_bloqueios,l.i_descontos_liquidacoes,
+            l.i_liquidacao_ant,l.i_anula_liq_ant,l.i_devolucoes, l.i_movto_supl, l.i_ano_subvencoes,l.i_subvencoes, l.i_descontos,l.i_alteracoes_prev_receitas,l.i_movto_alt_prev_receitas,
+            l.i_itens_devolucoes,l.i_contratos,l.i_contratos_mov_control, l.i_emliquidacao_ant,l.i_emliquidacao, l.i_anula_emliq_ant,l.i_anula_emliquidacao, l.i_lancamentos_manuais, l.i_anl_descontos_liquidacoes,
+            l.i_anl_descontos)
+
+from sapo.lancamentos l
+where l.i_entidades = 1 and
+l.ano_exerc = 2019 and
+month(l.data_lancamento) = 1) as tab,
+sapo.lancamentos
+
+where tab.entid = lancamentos.i_entidades and
+tab.ano_l = lancamentos.ano_exerc and
+tab.lanca = lancamentos.i_lancamentos and
+month(lancamentos.data_lancamento) = 1;
+call bethadba.pg_habilitartriggers('on');
+commit

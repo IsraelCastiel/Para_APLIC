@@ -1,0 +1,8 @@
+ uma vez verificado que 
+ feito um lançamento contabil livre nas caontas do grupo 2 
+ e consequentemente gerou a 89551 e 89552 contudo  cai nesse regra 
+ 
+ CON05-3 - Lançamento devedor nessa conta deve ser somente dos tipos 3-encerramento ou 6-estorno
+
+informe tudo como tmc 6...
+

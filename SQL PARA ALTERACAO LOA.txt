@@ -1,0 +1,37 @@
+select * from sapo.suplement
+where ano_exerc = 2018 and i_entidades = 1
+and data_fundamento like '2018-09%'
+and ementa = 3                          --ementa = 3 altera qdd
+--and i_suplementacoes = 619
+
+-ementa = Ementa (3-Alteração do QDD (exceto MG),4-Transposição (somente PR),
+5-Transferência (somente PR), 9-Reserva de contingência (somente PR),
+12-Abre crédito suplementar - operação de crédito,
+13-Abre crédito suplementar - superávit financeiro, 
+14-Abre crédito suplementar - reserva de contingência,
+15-Abre crédito suplementar - excesso de arrecadação,
+16-Abre crédito suplementar - anulação de dotação, 
+20-Transferência de recursos para reserva de contingência,
+30-Transf. de recursos p/ reserva de contingência e abre crédito suplementar,
+51-Abre crédito especial - operação de crédito, 
+52-Abre crédito especial - superávit financeiro,
+53-Abre crédito especial - anulação de dotação,
+54-Abre crédito especial - excesso de arrecadação, 
+55-Abre crédito extraordinário,
+56-Auxílios e convênios,
+57-Remanejamento entre despesas, 
+58-Abre crédito adicional - suplementar - originário do orçamento geral, 
+59-Abre crédito adicional - suplementar - não originário do orçamento geral (exceto RS),
+60-Abre crédito adicional - especial - abertos,
+61-Abre crédito adicional - especial - reabertos, 
+62-Abre crédito adicional - especial - reabertos suplementação,
+63-Abre crédito adicional - extraordinário - abertos,
+64-Abre crédito adicional - extraordinário - reabertos, 
+65-Abre crédito adicional - extraordinário - reabertos suplementação,
+66-Alteração da Lei Orçamentária (remanejamento),
+67-Dotação transferida - entre entidades, 
+68-Dotação transferida - mesma entidade,
+69-Cancelamento de dotações (exceto MG),
+71-Transposição (somente MG),
+77-Transposição, remanejamento ou transferência (GO, MS), 78-Nova fonte de recurso (GO, MS),99-Outros)
+

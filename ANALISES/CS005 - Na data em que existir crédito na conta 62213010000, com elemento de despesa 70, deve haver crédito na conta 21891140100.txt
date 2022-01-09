@@ -1,0 +1,15 @@
+CS005 - Na data em que existir crédito na conta 62213010000, com elemento de despesa 70, deve haver crédito na conta 21891140100
+Para Contrato de rateio - 
+marcar a opção "Passivo previamente reconhecido" ...
+e se for o caso regerar lançamento ..
+dos empenhos..
+
+
+lançamento para add saldo nos contratos 
+
+   <ROW ECTCE_Codigo="35511000000" LCDTCE_NumLancamento="56187" LCDTCE_NumSequencial="10" MCC_Data="11/10/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="37700.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Contrato 10310 (n&#250;m. 003/2021) - CONSORCIO INTERMUNIC.SAUDE DO MEDIO ARAG em execu&#231;&#227;o."></ROW>
+   <ROW ECTCE_Codigo="71231090000" LCDTCE_NumLancamento="56187" LCDTCE_NumSequencial="9" MCC_Data="11/10/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="37700.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Contrato 10310 (n&#250;m. 003/2021) - CONSORCIO INTERMUNIC.SAUDE DO MEDIO ARAG em execu&#231;&#227;o."></ROW>
+   <ROW ECTCE_Codigo="81231090100" LCDTCE_NumLancamento="56187" LCDTCE_NumSequencial="4" MCC_Data="11/10/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="00000000003/2021|00000000000/2021|23" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="37700.00" LCDTCE_Historico="Contrato 10310 (n&#250;m. 003/2021) - CONSORCIO INTERMUNIC.SAUDE DO MEDIO ARAG em execu&#231;&#227;o."></ROW>
+   <ROW ECTCE_Codigo="21891145100" LCDTCE_NumLancamento="56187" LCDTCE_NumSequencial="5" MCC_Data="11/10/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="37700.00" LCDTCE_Historico="Contrato 10310 (n&#250;m. 003/2021) - CONSORCIO INTERMUNIC.SAUDE DO MEDIO ARAG em execu&#231;&#227;o."></ROW>
+
+ 

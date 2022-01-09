@@ -1,0 +1,36 @@
+select m.BCO_Codigo, m.AGN_Codigo, m.CCBCO_Numero, m.CCBCO_Tipo,
+saldo_m = movbc_saldo,
+saldo_c = c.cnbco_valor
+from movimento_banco m, conciliacao c
+where m.BCO_Codigo = c.BCO_Codigo and
+m.AGN_Codigo = c.AGN_Codigo and
+m.CCBCO_Numero = c.CCBCO_Numero and
+m.CCBCO_Tipo = c.CCBCO_Tipo and
+saldo_m <> saldo_c and
+CNBCO_TipoOcorrencia = '6'
+
+union all
+
+select m.BCO_Codigo, m.AGN_Codigo, m.CCBCO_Numero, m.CCBCO_Tipo,
+saldo_m = movbc_saldo,
+saldo_c = 0.00
+from movimento_banco m
+where not exists(select 1 from conciliacao c
+                 where m.BCO_Codigo = c.BCO_Codigo and
+                       m.AGN_Codigo = c.AGN_Codigo and
+                       m.CCBCO_Numero = c.CCBCO_Numero and
+                       m.CCBCO_Tipo = c.CCBCO_Tipo) and
+saldo_m <> 0
+
+union all
+
+select c.BCO_Codigo, c.AGN_Codigo, c.CCBCO_Numero, c.CCBCO_Tipo,
+saldo_m = 0.00,
+saldo_c = c.cnbco_valor
+from conciliacao c
+where not exists(select 1 from movimento_banco m
+                 where m.BCO_Codigo = c.BCO_Codigo and
+                       m.AGN_Codigo = c.AGN_Codigo and
+                       m.CCBCO_Numero = c.CCBCO_Numero and
+                       m.CCBCO_Tipo = c.CCBCO_Tipo) and
+CNBCO_TipoOcorrencia = '6' 

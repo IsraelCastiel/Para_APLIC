@@ -1,0 +1,13 @@
+gerou nessa conta 
+
+
+CON49-4 - Nesta conta contábil NÃO É PERMITIDO deduções do FUNDEB(campo LCDTCE_ContaCorrente)
+
+substitui a 62139 pela 6213101
+
+11111190000
+42311010000
+62110000000
+62139000000
+82111010000
+72111000000

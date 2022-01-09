@@ -1,0 +1,19 @@
+DES19-9 - O saldo acumulado, por empenho, na conta 62213040000 deve ser igual à soma acumulada de 
+pagamento(tabela PAGAMENTO_EMPENHO) mais retenções(tabela DESCONTO_LIQUIDADO)
+ menos a soma acumulada de ANULACAO_PAGAMENTO_EMPENHO e ANULACAO_ESTORNO_DESC_LIQUIDAD
+ 
+ 
+ 
+ Saldo conta 62213040000(44135,78); Pago(38317,36) + Desconto liquidado(8286,9) - Anulação pgto(0) - Anulação desc. liquidado(0) = 46604,26
+ 
+ 
+ 
+ 
+ realizando o calculo notasse que 46604,26 - 44135,78 = 2.468,48 ou seja o valor do desconto duplicou em algum lançamento 
+ diante disto se faz necessário identificar tal lançamento e exclui-lo 
+
+
+
+ identifiquei o lançamento duplicado na lançamento e exclui
+ 
+ 

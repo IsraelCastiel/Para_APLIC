@@ -1,0 +1,6 @@
+CON71-4 - Em um mesmo lançamento contábil(LCDTCE_NumLancamento) 
+não deve conter contas de execução de receita(621) e de execução de despesa(622)
+
+separa em lançamento diferentes a contas 621 e em outro lançamento 622 
+
+

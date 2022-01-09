@@ -1,0 +1,9 @@
+CON03 - O saldo atual, considerando o saldo anterior, o movimento credor e o movimento devedor, está negativo
+
+Para previdencia  termo de parcelamento da divida ativa
+
+com relação a correção a correção da dívida ativa 
+pode ser o seguinte 
+debitar - 11261XXXXX e creditar 46391XXXXXX
+debitar 73212XXXXXX e creditar 8323201XXXXX
+

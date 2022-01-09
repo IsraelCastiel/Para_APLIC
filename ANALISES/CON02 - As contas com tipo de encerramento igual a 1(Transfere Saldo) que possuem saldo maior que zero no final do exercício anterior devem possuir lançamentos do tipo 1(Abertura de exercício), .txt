@@ -1,0 +1,7 @@
+CON02 - As contas com tipo de encerramento igual a 1(Transfere Saldo) que possuem saldo maior que zero no final do exercício anterior devem possuir lançamentos do tipo 1(Abertura de exercício), tabela MOVIMENTO_CONTA_CONTABIL_TCEMT
+
+<ROW ECTCE_Codigo="23711030000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="1185" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="855029.10" LCDTCE_ValorCredito="0.00"                                                                                                                                                      LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711020000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="5851" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="231.18"                                                                                                                                                      LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+<ROW ECTCE_Codigo="23711020000" LCDTCE_NumLancamento="2245" LCDTCE_NumSequencial="1198" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="854797.92"                                                                                                                                                       LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>
+
+

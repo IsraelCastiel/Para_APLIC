@@ -1,0 +1,27 @@
+REC17-2 - A fonte de recurso 02 deve registrar somente as receitas base de aplicação em ASPS
+
+na regra consta a rubrica correta onde 
+aponta a errada 1.3.2.1.00.1.1.01.03.00 e sugere a correta 1.3.2.1.00.1.1.01.10.00
+só mudei a rubrica e ja deu certo 
+
+
+_______________
+em comparação com entre os lançamentos do mÊs 07 e 06 incorreto 
+000000|04|00 mude para 000000|03|00
+
+
+  <ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="33876" LCDTCE_NumSequencial="4" MCC_Data="31/07/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="001|4111-4|10033-1|3|0|1|02|000000|101|00.000.000/0000-00" LCDTCE_ValorDebito="4324.11" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 10323 (lote 2149) da receita or&#231;ament&#225;ria 321 ref. Rem de Dep.  Fundo de Sa&#250;de (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="44521000000" LCDTCE_NumLancamento="33876" LCDTCE_NumSequencial="1" MCC_Data="31/07/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="4324.11" LCDTCE_Historico="Arrecada&#231;&#227;o 10323 (lote 2149) da receita or&#231;ament&#225;ria 321 ref. Rem de Dep.  Fundo de Sa&#250;de (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="62110000000" LCDTCE_NumLancamento="33876" LCDTCE_NumSequencial="5" MCC_Data="31/07/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1.3.2.1.00.1.1.01.03.00|0|1|02|000000" LCDTCE_ValorDebito="4324.11" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 10323 (lote 2149) da receita or&#231;ament&#225;ria 321 ref. Rem de Dep.  Fundo de Sa&#250;de (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="62120000000" LCDTCE_NumLancamento="33876" LCDTCE_NumSequencial="2" MCC_Data="31/07/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1.3.2.1.00.1.1.01.03.00|0|1|02|000000|04|00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="4324.11" LCDTCE_Historico="Arrecada&#231;&#227;o 10323 (lote 2149) da receita or&#231;ament&#225;ria 321 ref. Rem de Dep.  Fundo de Sa&#250;de (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="33876" LCDTCE_NumSequencial="6" MCC_Data="31/07/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|02|000000" LCDTCE_ValorDebito="4324.11" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 10323 (lote 2149) da receita or&#231;ament&#225;ria 321 ref. Rem de Dep.  Fundo de Sa&#250;de (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="33876" LCDTCE_NumSequencial="3" MCC_Data="31/07/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|02|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="4324.11" LCDTCE_Historico="Arrecada&#231;&#227;o 10323 (lote 2149) da receita or&#231;ament&#225;ria 321 ref. Rem de Dep.  Fundo de Sa&#250;de (413210011010302)."></ROW>
+
+
+  <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="29317" LCDTCE_NumSequencial="6" MCC_Data="30/06/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|02|000000" LCDTCE_ValorDebito="2264.51" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 8749 (lote 1820) da receita orçamentária 321 ref. Rem de Dep.  Fundo de Saúde (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="29317" LCDTCE_NumSequencial="2" MCC_Data="30/06/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|02|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="2264.51" LCDTCE_Historico="Arrecadação 8749 (lote 1820) da receita orçamentária 321 ref. Rem de Dep.  Fundo de Saúde (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="29317" LCDTCE_NumSequencial="5" MCC_Data="30/06/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="001|4111-4|10033-1|3|0|1|02|000000|101|00.000.000/0000-00" LCDTCE_ValorDebito="2264.51" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 8749 (lote 1820) da receita orçamentária 321 ref. Rem de Dep.  Fundo de Saúde (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="44521000000" LCDTCE_NumLancamento="29317" LCDTCE_NumSequencial="3" MCC_Data="30/06/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="2264.51" LCDTCE_Historico="Arrecadação 8749 (lote 1820) da receita orçamentária 321 ref. Rem de Dep.  Fundo de Saúde (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="62110000000" LCDTCE_NumLancamento="29317" LCDTCE_NumSequencial="4" MCC_Data="30/06/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1.1.1.3.03.1.1.02.00.00|0|1|02|000000" LCDTCE_ValorDebito="2264.51" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 8749 (lote 1820) da receita orçamentária 321 ref. Rem de Dep.  Fundo de Saúde (413210011010302)."></ROW>
+  <ROW ECTCE_Codigo="62120000000" LCDTCE_NumLancamento="29317" LCDTCE_NumSequencial="1" MCC_Data="30/06/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1.1.1.3.03.1.1.02.00.00|0|1|02|000000|03|00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="2264.51" LCDTCE_Historico="Arrecadação 8749 (lote 1820) da receita orçamentária 321 ref. Rem de Dep.  Fundo de Saúde (413210011010302)."></ROW>
+

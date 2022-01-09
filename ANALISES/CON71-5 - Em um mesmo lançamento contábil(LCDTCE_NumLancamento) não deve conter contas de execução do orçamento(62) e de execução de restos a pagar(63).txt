@@ -1,0 +1,3 @@
+CON71-5 - Em um mesmo lançamento contábil(LCDTCE_NumLancamento) não deve conter contas de execução do orçamento(62) e de execução de restos a pagar(63)
+
+FILTRE TODAS AS CONTAS 62100000000  E  63100000000  SEPARE EM OUTRO LANÇAMENTO

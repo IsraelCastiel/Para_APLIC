@@ -1,0 +1,5 @@
+DIV14 - Restos a pagar não cadastrado até exercício anterior
+
+TEm que ser verificado a data do restos a pagar por padrão o betha inscreve em 31/12 outros sistemas inscreve em outras datas
+
+

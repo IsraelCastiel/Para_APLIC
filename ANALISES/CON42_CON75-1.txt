@@ -1,0 +1,25 @@
+ CON42
+    
+  Observação a 8211101 negativo  
+      
+  quando der so o con42 só ele.
+  82111010000 C
+  82114000000 D   
+ 
+ 
+  CON 75
+ 
+  82112010000 D          
+  72111000000 C
+ 
+ 
+  ou quando o con42 é igual a con75
+ 
+  <ROW ECTCE_Codigo="80000000000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="13600.62" MCC_ValorCredito="13600.62"></ROW>
+  <ROW ECTCE_Codigo="82000000000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="13600.62" MCC_ValorCredito="13600.62"></ROW>
+  <ROW ECTCE_Codigo="82100000000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="13600.62" MCC_ValorCredito="13600.62"></ROW>
+  <ROW ECTCE_Codigo="82110000000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="13600.62" MCC_ValorCredito="13600.62"></ROW>
+  <ROW ECTCE_Codigo="82111000000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="13600.62" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="82111010000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="13600.62" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="82112000000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="13600.62"></ROW>
+  <ROW ECTCE_Codigo="82112010000" MCC_Data="29/07/2018" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="13600.62"></ROW>

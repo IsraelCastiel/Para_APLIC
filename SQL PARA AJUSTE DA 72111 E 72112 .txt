@@ -1,0 +1,38 @@
+select c.mascara, l.tipo_lancamento,l.descricao,l.ano_exerc from sapo.lancamentos as l 
+key join sapo.recursos as r key join sapo.contas as c
+where l.i_entidades = 1 and r.i_entidades = 1 and c.i_entidades = 1
+and l.ano_exerc = 2019 and
+l.mes_lancamento = 1 and
+tipo_recurso = 'V' and
+l.i_contas = 62252
+
+call bethadba.pg_habilitartriggers('off');
+insert into sapo.conexoes_usr values (connection_property('number'),current user,2017,1,null,null,1,4,3,0);
+
+
+call bethadba.pg_setoption('fire_triggers','off'); 
+update sapo.lancamentos l
+set i_contas = 50933 /*conta com a mascara 72111*/
+from sapo.lancamentos l key join sapo.recursos r
+where l.i_entidades = 1 and
+l.ano_exerc = 2018 and
+month(data_lancamento) >= 1 and
+tipo_recurso = 'O' and
+i_contas = 50934 /*conta com a mascara 72112*/;
+commit;
+call bethadba.pg_setoption('fire_triggers','on'); 
+
+call bethadba.pg_setoption('fire_triggers','off'); 
+update sapo.lancamentos l
+set i_contas = 50934 /*conta com a mascara 72112*/
+from sapo.lancamentos l key join sapo.recursos r
+where l.i_entidades = 1 and
+l.ano_exerc = 2018 and
+month(data_lancamento) >= 1 and
+tipo_recurso = 'V' and
+i_contas = 50933 /*conta com a mascara 72111*/;
+commit;
+call bethadba.pg_setoption('fire_triggers','on'); 
+
+
+______________________________________________________________________________

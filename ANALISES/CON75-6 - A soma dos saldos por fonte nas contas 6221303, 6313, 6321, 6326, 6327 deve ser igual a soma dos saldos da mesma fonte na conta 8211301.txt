@@ -1,0 +1,18 @@
+CON75-6 - A soma dos saldos por fonte nas contas 6221303, 6313, 6321, 6326, 6327 deve ser igual a soma dos saldos da mesma fonte na conta 8211301
+ <ROW ECTCE_Codigo="82113010000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="1" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="0.00" 
+LCDTCE_ValorCredito="460.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="2" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="460.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+
+ AI VAI DAR COM 50.2
+
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="3" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="460.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="4" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="460.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="21111010101" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="5" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="460.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="21111010101" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="6" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="460.00" LCDTCE_Historico="."></ROW>
+
+
+CON92-1 ¿ Saldo acumulado da fonte 00 nas contas 72111, 72112 e 72113 diverge do acumulado nas contas 82111, 82112, 82113 e 82114
+
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="7" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="460.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="8" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="460.00" LCDTCE_Historico="."></ROW>
+ 

@@ -1,0 +1,9 @@
+CON03 - O saldo atual, considerando o saldo anterior, o movimento credor e o movimento devedor, está negativo
+
+pra esse caso essa conta 11381080000 tem q ser utilizada qdo paga para o funcionário antes de consignar ..
+nesse caso é o inverso..descontou primeiro da previ e depois pagou para o funcionário ..
+nesse caso tem q usar a conta 21881 
+obs.: CORRIIGIR NO SISTEMA
+
+
+

@@ -1,0 +1,44 @@
+select e.i_empenhos,e.data_emissao,d.i_despesas,d.i_elementos,d.descricao,
+l.i_liquidacao,l.data_liquidacao,e.licitacao,e.licitacao_edital,e.tipo_licitacao,e.processo,
+e.numero_af,e.ano_af,elemento_compl,e.licitacao_tce 
+from sapo.liquidacao as l key join sapo.empenhos as e key join sapo.despesas as d
+where l.ano_exerc = 2020 and e.i_entidades = 1 and d.i_entidades = 1 
+and e.i_empenhos in (132,133,135,136,137,139,145,146,176,177,178,179,180,181,182,485,497,34,35,37,40,41,42,43,44,45,46,47,48,49,52,69,71,72,74,75,92,94)
+and month(l.data_liquidacao)=1 
+--and e.licitacao is not nul
+-- and e.numero_af is null and e.licitacao is not null
+
+
+select l.seq_grupo_lanc,mascara,l.valor_lancamento,tipo_lancamento,l.descricao from sapo.lancamentos as l key join sapo.contas as c
+where l.i_entidades = 1 and c.i_entidades= 1 and l.ano_exerc = 2018 
+and l.seq_grupo_lanc = 18677
+and l.tipo_lancamento = 'd'
+--and l.valor_lancamento = 2339.42
+
+
+select i_material,i_material_tce,cod_material_tce,i_unid_fornec,nome_mat from compras.material
+where i_material in ('144439',
+'144440',
+'144441',
+'144442',
+'144443',
+'144444',
+'144445',
+'144446',
+'144447',
+'144448',
+'144449',
+'144450',
+'144451')
+
+select * from compras.sequ_autor
+where i_ano_aut = 2021
+and i_sequ_aut = 4217
+
+select * from compras.itens_processo p
+join compras.itens_liquidacao l
+on (p.i_ano_proc = l.i_ano_aut
+and p.i_item = l.i_item_liq )
+where p.i_ano_proc = 2021
+and p.i_processo = 8031
+and l.i_sequ_aut = 4217

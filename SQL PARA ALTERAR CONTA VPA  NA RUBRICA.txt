@@ -1,0 +1,16 @@
+REC15-1 - Quando houver lançamento de receita intraorçamentária na conta 
+62120000000, a conta de VPA também deve ser intra(4xxxxxxxxxx)
+
+
+select *from sapo.rubricas_contas_ativo_vpa
+where i_rubricas = 472100411010000 
+and portaria_rubr = 2021
+
+
+call bethadba.pg_habilitartriggers('off');
+update sapo.rubricas_contas_ativo_vpa
+set i_contas = 55416
+where i_rubricas = 472100411010000 and
+portaria_rubr = 2021
+call bethadba.pg_habilitartriggers('on');
+commit

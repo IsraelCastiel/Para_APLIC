@@ -1,0 +1,30 @@
+
+select i_rubricas,rubrica_tce,tipo_rubrica,descricao from sapo.rubricas
+where i_entidades = 1 and portaria_rubr = 2019
+and tipo_rubrica = 'A'and rubrica_tce is not null
+
+SELECT  UPDATE_RUBRICA  = 'UPDATE sapo.rubricas set rubrica_tce = ' + rubrica_tce + 
+' FROM sapo.receitas as r ,sapo.rubricas as a WHERE r.i_entidades = a.i_entidades AND r.i_rubricas = a.i_rubricas AND r.portaria_rubr = a.portaria_rubr AND r.i_entidades = 1 AND r.ano_exerc = 2019 and a.i_rubricas = '+ a.i_rubricas +';commit;'
+ FROM sapo.receitas as r ,
+         sapo.rubricas as a
+   WHERE r.i_entidades = a.i_entidades AND 
+         r.i_rubricas = a.i_rubricas AND 
+         r.portaria_rubr = a.portaria_rubr AND
+         r.i_entidades = 1 AND
+         r.ano_exerc = 2019  and   rubrica_tce is not null order by a.i_rubricas;
+OUTPUT TO D:\APLIC_XML\canarana\KARINA\bkp\UpdateRubrica.txt FORMAT ASCII;
+
+
+/*deletando o conteudo do campo rubrica tce/*
+
+update sapo.rubricas
+set rubrica_tce = null
+where i_entidades = 1 and portaria_rubr = 2019 and 
+tipo_rubrica = 'A' and 
+rubrica_tce is not null
+
+______________________________________
+
+select i_rubricas,rubrica_tce,tipo_rubrica,descricao from sapo.rubricas
+where i_entidades = 1 and portaria_rubr = 2018
+and tipo_rubrica = 'A' and rubrica_tce is null

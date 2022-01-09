@@ -1,0 +1,5 @@
+Após verificar na inscrição de divida ativa na carga inicial quais rubricas seram inscritas teremos que ajustar a 
+tabela lançamento nas contas ECTCE_Codigo="83 e ECTCE_Codigo="73 o 
+valor tem que bater exatamente com  o valor inscrito na inscrição
+
+ 

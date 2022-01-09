@@ -1,0 +1,36 @@
+Faça um lançamento contabil entre contas bancarias
+
+erro
+
+
+CVD006 - O saldo acumulado em cada conta contábil, por fonte e detalhamento das contas 8211102, 8211201, 8211202, 8211301, 8211302, 8211303 e 82114 não deve ser negativo
+
+
+ ECTCE_Codigo:82113020000; LCDTCE_Contacorrente:46|074000  Saldo = -51083,82 
+
+foi pego um lote e feito o ajuste add as contas 82113020000, 21881019900,72112000000 e 11111020000
+
+
+<ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="5" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="001|1319-6|4.511-X|3|0|1|00|000000|101|00.000.000/0000-00" LCDTCE_ValorDebito="491.50" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="41131020000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="2" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="491.50" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="62110000000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="6" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1.1.1.8.02.3.1.01.00.00|0|1|00|000000" LCDTCE_ValorDebito="491.50" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="62120000000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="3" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1.1.1.8.02.3.1.01.00.00|0|1|00|000000|01|00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="491.50" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="72111000000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="4" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="491.50" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="1" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="491.50" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+
+
+
+no erro pode mudar a conta 8 
+<ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="8" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|46|074000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="51083.82" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="9" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|46|000000" LCDTCE_ValorDebito="51083.82" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+
+<ROW ECTCE_Codigo="21881019900" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="10" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="29.979.036/0446-01|0|1|46|074000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="51083.82" LCDTCE_Historico="Pagamento da despesa extra 1204 ref. INSS-  OBRAS/SERVIÇOS ."></ROW>
+<ROW ECTCE_Codigo="21881019900" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="11" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="29.979.036/0446-01|0|1|46|000000" LCDTCE_ValorDebito="51083.82" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Pagamento da despesa extra 1204 ref. INSS-  OBRAS/SERVIÇOS ."></ROW>
+
+<ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="12" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|46|074000" LCDTCE_ValorDebito="51083.82" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="13" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|46|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="51083.82" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+
+<ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="14" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="001|1319-6|4.511-X|3|0|1|46|074000|104|00.000.000/0000-00" LCDTCE_ValorDebito="51083.82" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+<ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="1894" LCDTCE_NumSequencial="15" MCC_Data="06/01/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="001|1319-6|4.511-X|3|0|1|46|000000|204|00.000.000/0000-00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="51083.82" LCDTCE_Historico="Arrecadação 131 (lote 59) da receita orçamentária 34 ref. ISS - Principal - Arrecadação Própria (411180231010100)."></ROW>
+
+

@@ -1,0 +1,103 @@
+//drop table lancamento_contabil_diario_tce
+create table lancamento_contabil_diario_tce(ECTCE_Codigo as char(50),LCDTCE_Numlancamento_contabil_diario_tce as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255));
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\99.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\01.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\02.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\03.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\04.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\05.csv' delimited by ';';
+delete lancamento_contabil_diario_tce
+where ectce_codigo = 'ectce_codigo';
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+commit;
+
+
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit
+
+
+
+
+
+select i_especificacao_tce, sum(if tipo_lancamento = 'C' then valor_lancamento else -valor_lancamento endif) 
+from sapo.lancamentos l key join sapo.contas c, sapo.relac_especif_recursos r
+where l.i_entidades = 1 and
+l.ano_exerc = 2019 and
+left(c.mascara,7) = 8211303 and
+l.i_entidades = r.i_entidades and
+l.ano_exerc = r.ano_exerc and
+l.i_recursos = r.i_recursos
+group by i_especificacao_tce
+sql para ser rodado no sistema
+
+
+
+
+select LCDTCE_ContaCorrente,saldo = sum(LCDTCE_ValorCredito) - sum(LCDTCE_ValorDebito) from lancamento_contabil_diario_tce
+where left(ECTCE_Codigo,7) = 8211302 / / 82114
+group by  LCDTCE_ContaCorrente
+having saldo <> 0 
+order by LCDTCE_ContaCorrente
+
+
+dependendo da conta mude de 7 para o numero de digitos da  conta 
+
+
+
+a fonte 19 estava naegativa na 82113020000
+
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="1" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="17477.70" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="2" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|19|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="17477.70" LCDTCE_Historico="."></ROW>
+
+  <ROW ECTCE_Codigo="21111010101" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="3" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="17477.70" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="21111010101" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="4" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|19|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="17477.70" LCDTCE_Historico="."></ROW>
+  
+  <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="5" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|19|000000" LCDTCE_ValorDebito="17477.70" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="72111000000" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="7" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="17477.70" LCDTCE_Historico="."></ROW>
+
+  <ROW ECTCE_Codigo="11111190000" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="10" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="001|1319-6|14.394-4|4|0|1|19|000000|104|00.000.000/0000-00" LCDTCE_ValorDebito="17477.70" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="11111190000" LCDTCE_NumLancamento="39741" LCDTCE_NumSequencial="12" MCC_Data="02/05/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="001|1319-6|14.394-4|4|0|1|00|000000|204|00.000.000/0000-00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="17477.70" LCDTCE_Historico="."></ROW>
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="6792" LCDTCE_NumSequencial="1" MCC_Data="18/02/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|22|000000" LCDTCE_ValorDebito="10506.83" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82113010000" LCDTCE_NumLancamento="6792" LCDTCE_NumSequencial="2" MCC_Data="18/02/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|22|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="10506.83" LCDTCE_Historico="."></ROW>
+
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="6792" LCDTCE_NumSequencial="3" MCC_Data="18/02/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|22|000000" LCDTCE_ValorDebito="4301.73" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="6792" LCDTCE_NumSequencial="4" MCC_Data="18/02/2018" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|22|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="4301.73" LCDTCE_Historico="."></ROW>
+
+
+OU
+ 
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="1" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="460.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="2" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="460.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="21111010101" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="3" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="460.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="21111010101" LCDTCE_NumLancamento="32469" LCDTCE_NumSequencial="4" MCC_Data="09/06/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="460.00" LCDTCE_Historico="."></ROW>
+
+ou 
+
+
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="62706" LCDTCE_NumSequencial="3" MCC_Data="27/10/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="123.73" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="62706" LCDTCE_NumSequencial="4" MCC_Data="27/10/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="123.73" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+    
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="62706" LCDTCE_NumSequencial="5" MCC_Data="27/10/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="123.73" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="62706" LCDTCE_NumSequencial="6" MCC_Data="27/10/2019" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|29|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="123.73" LCDTCE_Historico="."></ROW>
+ 

@@ -1,0 +1,12 @@
+DES28-1 ¿ O saldo acumulado nessa conta, por credor, não poderá ser negativo
+
+Em análise ao nosso banco de dados identificamos incompatibilidade das Contas Correntes em lançamentos 
+envolvendo a conta 6221303030000. 
+
+Por exemplo, no lançamento nº 35738, houve liquidação nessa conta e foram informados 11 dígitos 
+no campo de Destinação de Recursos; 
+enquanto no lançamento nº 37220 ocorreu o pagamento dessa liquidação e foram informados 10 dígitos 
+no campo de Destinação de Recursos, ocasionando o erro DES28-1
+
+select * from lancamento_contabil_diario_tce 
+where LCDTCE_ContaCorrente like '%.0000000|%'

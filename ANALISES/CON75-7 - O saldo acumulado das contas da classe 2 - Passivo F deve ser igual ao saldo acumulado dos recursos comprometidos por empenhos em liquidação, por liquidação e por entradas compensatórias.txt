@@ -1,0 +1,33 @@
+ esse pro CON75-7 - O saldo acumulado das contas da classe 2 - Passivo F deve ser igual ao saldo acumulado dos recursos comprometidos por empenhos em liquidação, por liquidação e por entradas compensatórias
+ 
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="16053" LCDTCE_NumSequencial="1" MCC_Data="25/04/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="130.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="16053" LCDTCE_NumSequencial="2" MCC_Data="25/04/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="130.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="16053" LCDTCE_NumSequencial="3" MCC_Data="25/04/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="130.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82114000000" LCDTCE_NumLancamento="16053" LCDTCE_NumSequencial="4" MCC_Data="25/04/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="130.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="16053" LCDTCE_NumSequencial="5" MCC_Data="25/04/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="130.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="72111000000" LCDTCE_NumLancamento="16053" LCDTCE_NumSequencial="6" MCC_Data="25/04/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="130.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+
+
+
+
+
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="31431" LCDTCE_NumSequencial="3" MCC_Data="25/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="8735.35" LCDTCE_Historico="Arrecada&#231;&#227;o 7591 (lote 2171) da receita or&#231;ament&#225;ria 39 ref. Transfer&#234;ncias de Conv&#234;nios da Uni&#227;o destinadas a Programas de Saneamento B&#225;sico - Principal (424181051000000)."></ROW>
+  <ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="31431" LCDTCE_NumSequencial="9" MCC_Data="25/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="8735.35" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Empenho 4052 da despesa or&#231;ament&#225;ria 74."></ROW>
+
+  <ROW ECTCE_Codigo="82113020000" LCDTCE_NumLancamento="31432" LCDTCE_NumSequencial="1" MCC_Data="25/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="8735.35" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Desconto extraor&#231;ament&#225;rio no(a) liquida&#231;&#227;o de empenho 380 ref. CR&#201;DITOS A RECEBER POR REEMBOLSO DE SAL&#193;RIO FAM&#205;LIA - FUNDEB 40 ."></ROW>
+  <ROW ECTCE_Codigo="82114000000" LCDTCE_NumLancamento="31432" LCDTCE_NumSequencial="2" MCC_Data="25/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="8735.35" LCDTCE_Historico="Pagamento do(a) despesa extra 63  611285741."></ROW>
+
+
+  <ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="31432" LCDTCE_NumSequencial="3" MCC_Data="25/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="8735.35" LCDTCE_Historico="Desconto extraor&#231;ament&#225;rio no(a) liquida&#231;&#227;o de empenho 380 ref. CR&#201;DITOS A RECEBER POR REEMBOLSO DE SAL&#193;RIO FAM&#205;LIA - FUNDEB 40 ."></ROW>
+  <ROW ECTCE_Codigo="72111000000" LCDTCE_NumLancamento="31432" LCDTCE_NumSequencial="4" MCC_Data="25/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="8735.35" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Pagamento do(a) despesa extra 63  611285741."></ROW>
+
+
+
+
+
+  para o exemplo na  Fonte:01
+  Saldo DDR:10863,77; Contas financeiras do Passivo F:11163,77
+  foi identificado uma difrença de 300 reias e no lançamento 
+  identificamos no lançamento de origem algumas contas que geraram 
+  com fontes diferentes
+  

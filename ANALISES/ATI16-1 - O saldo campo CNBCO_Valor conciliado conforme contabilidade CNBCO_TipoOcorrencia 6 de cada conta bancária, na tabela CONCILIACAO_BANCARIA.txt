@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+Tem como fazer uma baixa de um saldo de uma conta bancaria tipo pra zerar ela,
+ esse saldo que esta nela não existe e não tem nenhuma conta bancaria faltando saldo pra transferir. 
+
+=======
+Tem como fazer uma baixa de um saldo de uma conta bancaria tipo pra zerar ela, 
+esse saldo que esta nela não existe e não tem nenhuma conta bancaria faltando saldo pra transferir. 
+
+>>>>>>> main
+Use a 2371103 mais ai tera que usar a 8211101 e creditar a 82114000
+
+  <ROW ECTCE_Codigo="11111190000" LCDTCE_NumLancamento="8040" LCDTCE_NumSequencial="1" MCC_Data="11/02/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="001|8236-8|1066-9|4|0|1|00|000000|299|00.000.000/0000-00" LCDTCE_ValorCredito="46001.70" LCDTCE_ValorDebito="0.00"   LCDTCE_Historico="Ajuste de saldo anterio"></ROW>
+  <ROW ECTCE_Codigo="23711030000" LCDTCE_NumLancamento="8040" LCDTCE_NumSequencial="2" MCC_Data="11/02/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="" LCDTCE_ValorCredito="0.00" LCDTCE_ValorDebito="46001.70"   LCDTCE_Historico="Ajuste de saldo anterio"></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="8040" LCDTCE_NumSequencial="5" MCC_Data="11/02/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="46001.70" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Ajuste de saldo anterio"></ROW>
+  <ROW ECTCE_Codigo="82114000000" LCDTCE_NumLancamento="8040" LCDTCE_NumSequencial="1" MCC_Data="11/02/2021" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="46001.70" LCDTCE_Historico="Ajuste de saldo anterio"></ROW>

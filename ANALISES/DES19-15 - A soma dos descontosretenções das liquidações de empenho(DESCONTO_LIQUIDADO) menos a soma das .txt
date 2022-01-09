@@ -1,0 +1,10 @@
+DES19-15 - A soma dos descontos/retenções das liquidações de empenho(DESCONTO_LIQUIDADO) menos a soma das 
+anulações(ANULACAO_ESTORNO_DESC_LIQUIDADO) deve ser maior ou igual a soma dos
+ pagamentos(DESCONTO_LIQUIDADO_PAGO) menos as respectivas anulações(ANULACAO_ESTORNO_DESC_LIQ_PAGO)
+ 
+ 
+ 
+ Não gera a 
+ANULACAO_ESTORNO_DESC_LIQ_PAGO
+ANULACAO_ESTORNO_DESC_LIQUIDADO
+

@@ -1,0 +1,3 @@
+  Correção para bens imoveis
+ 
+  identifique o valor da diferença depois identifique na lançamento as contas 12321.. altera as contas com final 05 e 07 para 06.

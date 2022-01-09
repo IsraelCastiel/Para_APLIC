@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+
+para a regra ORC67-19 - O crédito adicional financiado por superávit financeiro (ALTLOA_TipoRecurso = 4), deve 
+ter o grupo da destinação de recurso igual a 3
+
+mude na alteração loa para 3 e na lançamento contabil também
+para não cair na regra
+
+ORC06 - O Saldo contábil de cada crédito 
+adicional suplementar aberto, conta contábil 52212010000, deve ser igual à mesma dotação encaminhada na tabela ALTERACAO_LOA (Tipo 4 - Crédito Suplementar)
+
+
+
+
+
+=======
+
+para a regra ORC67-19 - O crédito adicional financiado por superávit financeiro (ALTLOA_TipoRecurso = 4), deve 
+ter o grupo da destinação de recurso igual a 3
+
+mude na alteração loa para 3 e na lançamento contabil também
+para não cair na regra
+
+ORC06 - O Saldo contábil de cada crédito 
+adicional suplementar aberto, conta contábil 52212010000, deve ser igual à mesma dotação encaminhada na tabela ALTERACAO_LOA (Tipo 4 - Crédito Suplementar)
+
+
+
+
+
+>>>>>>> main

@@ -1,0 +1,4 @@
+CON41 - Saídas de Caixa e Equivalente permitidas somente em contrapartida com as contas 111, 113, 114, 1223, 21, 22 (com atributo do superávit financeiro ¿F¿), 1134104, VPD ou dedução de VPA, exceto estorno
+
+quando for perda de aplicação ou estono só mudar o tmc para 6 
+nomrmalmente esse  erro acontece quando o lançamento é de estorno ou perda d einvestimentos e o sistema gera tmc2

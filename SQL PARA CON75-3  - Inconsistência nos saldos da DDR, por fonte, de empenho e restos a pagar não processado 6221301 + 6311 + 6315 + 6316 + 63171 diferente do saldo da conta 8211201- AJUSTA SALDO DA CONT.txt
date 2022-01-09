@@ -1,0 +1,155 @@
+
+/*
+dependendo da importação 
+não execute 
+select lcdtce_contacorrente, substr(lcdtce_contacorrente,8,4), mcc_data from _lanc08
+where left(ectce_codigo,3) = 611
+/
+
+
+drop table lancamento;
+commit
+
+create table lancamento(ECTCE_Codigo as char(50),LCDTCE_NumLancamento as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255));
+commit
+
+input into lancamento from 'C:\envio\Previ_Canarana\2020\xmls_2020\lancamento99.csv' delimited by ';';
+commit;
+
+delete lancamento
+where ectce_codigo = 'ectce_codigo'
+
+update lancamento
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit
+
+alter table lancamento modify lcdtce_valordebito numeric(14,2);
+alter table lancamento modify lcdtce_valorcredito numeric(14,2);
+commit
+
+
+select lcdtce_contacorrente, substr(lcdtce_contacorrente,8,4), mcc_data from lancamento
+where left(ectce_codigo,3) = 611
+
+select '<ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="2437" LCDTCE_NumSequencial="' || number(*) ||
+'" MCC_Data="04/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="' + '0|1|' || string(recurso) || '|000000' + 
+'" LCDTCE_ValorDebito="' + string(isnull(if diferença > 0 then diferenca endif,0)) + '" LCDTCE_ValorCredito="' + 
+string(isnull(if diferenca < 0 then -diferenca endif,0)) + '" LCDTCE_Historico="Ajuste de Saldo"></ROW>'
+from (select recurso = substr(lcdtce_contacorrente,62,2),
+saldo = sum(lcdtce_valorcredito) - sum(lcdtce_valordebito),
+saldo_8211201 = isnull((select sum(l.lcdtce_valorcredito) - sum(l.lcdtce_valordebito)
+                from lancamento l
+                where left(l.ectce_codigo,7) in(8211201) and
+                      substr(l.lcdtce_contacorrente,5,2) = substr(lancamento.lcdtce_contacorrente,62,2)),0),
+diferenca = saldo_8211201 - saldo 
+from lancamento
+where (left(ectce_codigo,4) in(6311,6317) or
+left(ectce_codigo,7) in(6221301))
+group by recurso
+having saldo <> saldo_8211201
+
+union all
+
+select recurso = substr(l.lcdtce_contacorrente,5,2),
+saldo = 0,
+saldo_8211201 = sum(lcdtce_valorcredito) - sum(lcdtce_valordebito),
+diferenca = saldo_8211201 - saldo
+from lancamento l
+where left(l.ectce_codigo,7) in(8211201) and
+not exists(select 1
+                from lancamento
+                where (left(lancamento.ectce_codigo,4) in(6311,6317) or
+                      left(lancamento.ectce_codigo,7) in(6221301)) and
+                      substr(l.lcdtce_contacorrente,5,2) = substr(lancamento.lcdtce_contacorrente,62,2))
+group by recurso
+order by recurso) as tab;
+output to 'C:\envio\Pm_Planalto\2020\xmls_2020\lanca.txt' FORMAT ASCII QUOTE '' DELIMITED BY ''
+_______________________________________________________________________
+
+Ja editada 
+tem q incluir a 72112 e 1111102
+
+/*drop table lancamento;
+commit
+*/
+create table _lanc08(ECTCE_Codigo as char(50),LCDTCE_NumLancamento as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255));
+commit;
+
+input into lancamento from 'C:\envio\Previ_Canarana\2020\xmls_2020\lancamento99.csv' delimited by ';';
+commit;
+
+delete lancamento
+where ectce_codigo = 'ectce_codigo'
+
+update _lanc08
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit;
+
+alter table _lanc08 modify lcdtce_valordebito numeric(14,2);
+alter table _lanc08 modify lcdtce_valorcredito numeric(14,2);
+commit;
+
+
+/*select lcdtce_contacorrente, substr(lcdtce_contacorrente,8,4), mcc_data from _lanc08
+where left(ectce_codigo,3) = 611
+*/
+
+select '<ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="2437" LCDTCE_NumSequencial="' || number(*) ||
+'" MCC_Data="04/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="' + '0|1|' || string(recurso) || '|000000' + 
+'" LCDTCE_ValorDebito="' + string(isnull(if diferença > 0 then diferenca endif,0)) + '" LCDTCE_ValorCredito="' + 
+string(isnull(if diferenca < 0 then -diferenca endif,0)) + '" LCDTCE_Historico="Ajuste de Saldo"></ROW>'
+from (select recurso = substr(lcdtce_contacorrente,62,2),
+saldo = sum(lcdtce_valorcredito) - sum(lcdtce_valordebito),
+saldo_8211201 = isnull((select sum(l.lcdtce_valorcredito) - sum(l.lcdtce_valordebito)
+                from _lanc08 l
+                where left(l.ectce_codigo,7) in(8211201) and
+                      substr(l.lcdtce_contacorrente,5,2) = substr(_lanc08.lcdtce_contacorrente,62,2)),0),
+diferenca = saldo_8211201 - saldo 
+from _lanc08
+where (left(ectce_codigo,4) in(6311,6317) or
+left(ectce_codigo,7) in(6221301))
+group by recurso
+having saldo <> saldo_8211201
+
+union all
+
+select recurso = substr(l.lcdtce_contacorrente,5,2),
+saldo = 0,
+saldo_8211201 = sum(lcdtce_valorcredito) - sum(lcdtce_valordebito),
+diferenca = saldo_8211201 - saldo
+from _lanc08 l
+where left(l.ectce_codigo,7) in(8211201) and
+not exists(select 1
+                from _lanc08
+                where (left(_lanc08.ectce_codigo,4) in(6311,6317) or
+                      left(_lanc08.ectce_codigo,7) in(6221301)) and
+                      substr(l.lcdtce_contacorrente,5,2) = substr(_lanc08.lcdtce_contacorrente,62,2))
+group by recurso
+order by recurso) as tab;
+output to 'D:\APLIC_XML\CONFRESA\bkp\lanca.txt' FORMAT ASCII QUOTE '' DELIMITED BY ''
+
+
+
+
+DEPOIS QUE O EXCRIPIT GERAR .. OS LANÇAMENTOS DA CONTA 8
+REALIZAR O LANÇAMENTO A BAIXO
+
+<ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="1" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="76213.36" LCDTCE_Historico="Ajuste de Saldo"></ROW>
+<ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="2" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|22|000000" LCDTCE_ValorDebito="18959.56" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Ajuste de Saldo"></ROW>
+<ROW ECTCE_Codigo="82112010000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="3" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|25|000000" LCDTCE_ValorDebito="57253.80" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Ajuste de Saldo"></ROW>
+ 
+<ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="4" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="001|8231-7|11251-8|3|0|1|00|000000|155|00.000.000/0000-00" LCDTCE_ValorDebito="76213.36" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+<ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="5" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="001|8231-7|11251-8|3|0|1|22|000000|299|00.000.000/0000-00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="18959.56" LCDTCE_Historico="."></ROW>
+<ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="6" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="001|8231-7|11251-8|3|0|1|25|000000|299|00.000.000/0000-00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="57253.80" LCDTCE_Historico="."></ROW>
+
+<ROW ECTCE_Codigo="72111000000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="7" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="76213.36" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Ajuste de Saldo"></ROW>
+<ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="8" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|22|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="18959.56" LCDTCE_Historico="Ajuste de Saldo"></ROW>
+<ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="3335" LCDTCE_NumSequencial="9" MCC_Data="26/01/2020" TMC_Codigo="6" LCDTCE_ContaCorrente="0|1|25|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="57253.80" LCDTCE_Historico="Ajuste de Saldo"></ROW>
+  
+  
+
+  

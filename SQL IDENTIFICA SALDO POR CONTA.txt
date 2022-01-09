@@ -1,0 +1,3 @@
+select sum(LCDTCE_ValorDebito) - sum(LCDTCE_ValorCredito)  from lancamento_contabil_diario_tce
+where ECTCE_Codigo like '81231040100' and MCC_Data like '%/01/2021'
+group by ECTCE_Codigo

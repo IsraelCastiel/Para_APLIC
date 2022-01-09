@@ -1,0 +1,21 @@
+
+ATI08-1 - O saldo acumulado na conta 83230000000 diverge do saldo acumulado nas contas 11250000000 + 12111040100 + 12111040200 + 12112040100 + 12113040100 + 12114040000 + 12115040000
+ 
+  debita a 8323101 e credita a 732110000
+
+identifique um lote com uma rubrica difetente e que tenha saldo pra fazer o lançamento 
+
+tem que ser em lançametos separados
+
+
+  <ROW ECTCE_Codigo="80000000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="4699.07" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="83000000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="4699.07" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="83200000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="4699.07" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="83230000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="4699.07" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="83231000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="4699.07" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="83231010000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="4699.07" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="70000000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="0.00" MCC_ValorCredito="4699.07"></ROW>
+  <ROW ECTCE_Codigo="73000000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="0.00" MCC_ValorCredito="4699.07"></ROW>
+  <ROW ECTCE_Codigo="73200000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="0.00" MCC_ValorCredito="4699.07"></ROW>
+  <ROW ECTCE_Codigo="73210000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="0.00" MCC_ValorCredito="4699.07"></ROW>
+  <ROW ECTCE_Codigo="73211000000" MCC_Data="05/09/2021" TMC_Codigo="2.0" MCC_ValorDebito="0.00" MCC_ValorCredito="4699.07"></ROW>

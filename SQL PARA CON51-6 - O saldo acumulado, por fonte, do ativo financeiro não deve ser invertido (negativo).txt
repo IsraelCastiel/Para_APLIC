@@ -1,0 +1,87 @@
+1º passo importe desde a carga incial até o mes que esta sendo enviado o aplic 
+identifica as fontes com saldo negativo ..
+
+
+//drop table lancamento_contabil_diario_tce
+create table lancamento_contabil_diario_tce(ECTCE_Codigo as char(50),LCDTCE_Numlancamento_contabil_diario_tce as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255));
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\99.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\01.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\02.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\03.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\04.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\05.csv' delimited by ';';
+delete lancamento_contabil_diario_tce
+where ectce_codigo = 'ectce_codigo';
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+commit;
+
+
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit
+
+
+select contacorrente = substr(lcdtce_contacorrente,locate(lcdtce_contacorrente,'|000000') - 2,2), saldo = sum(lcdtce_valordebito) - sum(lcdtce_valorcredito) 
+from lancamento_contabil_diario_tce l
+where left(ectce_codigo,2) = 11 and
+exists(select * from sapo.contas c
+where left(ectce_codigo,7) = left(mascara,7) and
+i_plano_contas = 4 and
+i_entidades = 1 and
+c.superavit_financ = 'F')
+group by contacorrente
+order by contacorrente
+
+
+
+
+fonte negativa 25
+
+
+  <ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="3339" LCDTCE_NumSequencial="1" MCC_Data="06/01/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="001|8231-7|19730-0|3|0|1|25|000000|104|00.000.000/0000-00" LCDTCE_ValorDebito="57253.80" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="11111020000" LCDTCE_NumLancamento="3339" LCDTCE_NumSequencial="2" MCC_Data="06/01/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="001|8231-7|19730-0|3|0|1|24|000000|204|00.000.000/0000-00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="57253.80" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+
+  <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="3339" LCDTCE_NumSequencial="1" MCC_Data="06/01/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|25|000000" LCDTCE_ValorDebito="57253.80" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="3339" LCDTCE_NumSequencial="2" MCC_Data="06/01/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|24|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="57253.80" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="3339" LCDTCE_NumSequencial="1" MCC_Data="06/01/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|25|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="57253.80" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="3339" LCDTCE_NumSequencial="2" MCC_Data="06/01/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|24|000000" LCDTCE_ValorDebito="57253.80" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+   
+AJUSTE DO ATIVO FINACEIRO -  CON51-6 - O saldo acumulado, por fonte, do ativo financeiro não deve ser invertido (negativo)
+ 
+ D -> 1111101
+ C- > 8211101
+ D- >7211200
+
+ C - > 1111101 
+ D -> 8211101 
+ C -> 8211400
+
+
+
+
+ou 
+
+  <ROW ECTCE_Codigo="11111190000" LCDTCE_NumLancamento="16052" LCDTCE_NumSequencial="1" MCC_Data="30/04/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="001|4099-1|10.457-4|4|1|1|46|000000|104|00.000.000/0000-00" LCDTCE_ValorDebito="1120591.17" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="11111190000" LCDTCE_NumLancamento="16052" LCDTCE_NumSequencial="2" MCC_Data="30/04/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="001|4099-1|10.457-4|4|0|1|00|000000|204|00.000.000/0000-00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="1120591.17" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="72112000000" LCDTCE_NumLancamento="16052" LCDTCE_NumSequencial="3" MCC_Data="30/04/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1|1|46|000000" LCDTCE_ValorDebito="1120591.17" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="72111000000" LCDTCE_NumLancamento="16052" LCDTCE_NumSequencial="4" MCC_Data="30/04/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="1120591.17" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="16052" LCDTCE_NumSequencial="5" MCC_Data="30/04/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="1|1|46|000000" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="1120591.17" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+  <ROW ECTCE_Codigo="82111010000" LCDTCE_NumLancamento="16052" LCDTCE_NumSequencial="6" MCC_Data="30/04/2021" TMC_Codigo="2" LCDTCE_ContaCorrente="0|1|00|000000" LCDTCE_ValorDebito="1120591.17" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 8 (lote 5) da receita or&#231;ament&#225;ria 34 ref. Transf. de Recursos do FUNDEB - 60% (417580111010000)."></ROW>
+   
+   
+ 

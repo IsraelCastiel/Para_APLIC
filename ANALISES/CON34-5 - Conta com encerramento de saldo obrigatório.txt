@@ -1,0 +1,10 @@
+para zerar o saldo das contas do grupo 3 e 4
+observe sempre o 5º dígito tem q ser igual das duas contas
+
+3XXX1 = 2371101
+3XXX2 = 2371201
+3XXX3 = 2371301
+3XXX4 = 2371401
+3XXX5 = 2371501
+
+a conta 2371X01 serve como contrapartida para os dois grupos 3 e 4

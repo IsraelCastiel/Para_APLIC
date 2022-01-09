@@ -1,0 +1,397 @@
+//lancamento_contabil_diario_tce;
+create table lancamento_contabil_diario_tce(ECTCE_Codigo as char(50),LCDTCE_Numlancamento_contabil_diario_tce as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255));
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\99.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\01.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\02.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\03.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\04.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\05.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\06.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\07.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\08.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\09.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\10.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\11.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\12.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\13.csv' delimited by ';';
+
+delete lancamento_contabil_diario_tce
+where ectce_codigo = 'ectce_codigo';
+commit;
+
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit;
+
+
+
+
+//drop table lancamento_tempo;commit;
+create table lancamento_tempo(mascara as char(11), dat as char(50), tmc as char(1), num_lamc as integer, sequencial as integer, local as integer, contacorrente as char(255), debito as numeric(14,2), credito as numeric(14,2));commit;
+
+
+insert into lancamento_tempo
+
+select ectce_codigo, 
+'31/12/2020', '1', '29', number(*), 
+local = if locate(lcdtce_contacorrente,'|3|0|') <> 0 then
+              locate(lcdtce_contacorrente,'|3|0|')
+        else
+          if locate(lcdtce_contacorrente,'|1|0|') <> 0 then
+              locate(lcdtce_contacorrente,'|1|0|')
+       else
+           if locate(lcdtce_contacorrente,'|1|1|') <> 0 then
+              locate(lcdtce_contacorrente,'|1|1|')
+          else
+              if locate(lcdtce_contacorrente,'|4|0|') <> 0 then
+                 locate(lcdtce_contacorrente,'|4|0|')
+        endif endif endif endif,
+contacorrente = if left(ectce_codigo,7) = 1111101 then
+                    left(lcdtce_contacorrente,13)  || '|102|' || '00.000.000/0000-00'
+                else
+                    if left(ectce_codigo,5) = 11111 then
+                        left(lcdtce_contacorrente,local + 15) || '|102|' || '00.000.000/0000-00'
+                    else
+                    if left(ectce_codigo,3) = 832 then
+                        left(lcdtce_contacorrente,23)
+                    else
+                        lcdtce_contacorrente
+                    endif
+                    endif
+                endif,
+valor_deb = if isnull(sum(lcdtce_valordebito),0) - isnull(sum(lcdtce_valorcredito),0) > 0 then 
+               isnull(sum(lcdtce_valordebito),0) - isnull(sum(lcdtce_valorcredito),0) else 0 endif, 
+valor_cre = if isnull(sum(lcdtce_valordebito),0) - isnull(sum(lcdtce_valorcredito),0) < 0 then 
+               isnull(sum(lcdtce_valorcredito),0) - isnull(sum(lcdtce_valordebito),0) else 0 endif
+from lancamento_contabil_diario_tce
+where left(ectce_codigo,2) <> '52' and
+left(ectce_codigo,2) <> '62' and
+left(ectce_codigo,9) not in('812310402','812310202','812310302','832410100','832510100','891210300') and
+left(ectce_codigo,1) not in(3,4)
+group by ectce_codigo,  contacorrente, local
+having valor_deb <> 0 or valor_cre <> 0
+order by ectce_codigo, contacorrente;
+commit;
+
+
+
+// 5317
+insert into lancamento_tempo 
+select '53110000000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,4) in(5317);
+commit;
+
+insert into lancamento_tempo
+select mascara, dat, tmc, 29, number(*), null, contacorrente, 0.00, debito from lancamento_tempo
+where left(mascara,4) in(5317);
+commit;
+
+//63171
+insert into lancamento_tempo
+select '63110000000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,5) in(63171);
+commit;
+
+insert into lancamento_tempo
+select mascara, dat, tmc, 29, number(*), null, contacorrente, credito, 0.00 from lancamento_tempo
+where left(mascara,5) in(63171);
+commit;
+
+// 5327
+insert into lancamento_tempo
+select '53210000000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,4) in(5327);
+commit;
+
+insert into lancamento_tempo
+select mascara, dat, tmc, 29, number(*), null, contacorrente, 0.00, debito from lancamento_tempo
+where left(mascara,4) in(5327);
+commit;
+
+//6327
+insert into lancamento_tempo
+select '63210000000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,4) in(6327);
+commit;
+
+insert into lancamento_tempo
+select mascara, dat, tmc, 29, number(*), null, contacorrente, credito, 0.00 from lancamento_tempo
+where left(mascara,4) in(6327);
+commit;
+
+//2371101
+
+insert into lancamento_tempo
+select '23711020000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,7) in(2371101);
+commit;
+
+insert into lancamento_tempo
+select '23711010000', dat, tmc, 29, number(*), null, contacorrente, credito, debito from lancamento_tempo
+where left(mascara,7) in(2371101);
+commit;
+
+
+//2371201
+
+insert into lancamento_tempo
+select '23712020000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,7) in(2371201);
+commit;
+
+
+insert into lancamento_tempo
+select '23712010000', dat, tmc, 29, number(*), null, contacorrente, credito, debito from lancamento_tempo
+where left(mascara,7) in(2371201);
+commit;
+
+
+//2371301
+
+insert into lancamento_tempo
+select '23713020000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,7) in(2371301);
+commit;
+
+insert into lancamento_tempo
+select '23713010000', dat, tmc, 29, number(*), null, contacorrente, credito, debito from lancamento_tempo
+where left(mascara,7) in(2371301);
+commit;
+
+//2371401
+
+insert into lancamento_tempo
+select '23714020000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,7) in(2371401);
+commit;
+
+insert into lancamento_tempo
+select '23714010000', dat, tmc, 29, number(*), null, contacorrente, credito, debito from lancamento_tempo
+where left(mascara,7) in(2371401);
+commit;
+
+
+//2371501
+
+insert into lancamento_tempo
+select '23715020000', dat, tmc, 29, number(*), null, contacorrente, debito, credito from lancamento_tempo
+where left(mascara,7) in(2371501);
+commit;
+
+insert into lancamento_tempo
+select '23715010000', dat, tmc, 29, number(*), null, contacorrente, credito, debito from lancamento_tempo
+where left(mascara,7) in(2371501);
+commit;
+
+
+update lancamento_tempo
+set contacorrente = left(contacorrente,locate(contacorrente,'.0.1.') - 3) || '00' ||
+substr(contacorrente,locate(contacorrente,'.0.1.'),50)
+from lancamento_tempo     
+where left(mascara,2) in(53,63)and
+substr(contacorrente,locate(contacorrente,'.0.1.') - 5,2) not in('05','08','13','16','91','92','94');
+commit;
+
+
+
+// EXECUTAR O SCRIPT ABAIXO COM O USUÁRIO TECBTH
+call bethadba.pg_habilitartriggers('off');
+create variable @@conn_usr_atualizando_saldo_conta Integer;
+update sapo.contas
+set grau_conta = 10 
+where i_entidades = 1 and
+i_plano_contas = 4 and
+//left(mascara,9) in(218910201,213110101) and
+(contas.exerc_fin is null or 
+ (contas.exerc_fin = 2021 and
+  not exists(select 1 from sapo.contas cc
+             where cc.i_entidades = contas.i_entidades and
+                   cc.i_plano_contas = contas.i_plano_contas and
+                   left(cc.mascara,11) = left(contas.mascara,11) and
+                   cc.exerc_ini = 2022))) and
+right(mascara,2) <> '00' and
+grau_conta <> 10;
+commit;
+call bethadba.pg_habilitartriggers('on');
+commit;
+
+// gera movimento carga inicial
+select
+'<ROW ECTCE_Codigo="' +  string(left(masca,11)) + '" MCC_Data="31/12/2020" TMC_Codigo="1"  MCC_ValorDebito="' + 
+string(sum(valor_deb)) + '" MCC_ValorCredito="' + 
+string(sum(valor_cre)) + '"></ROW>'
+
+FROM (select masca = left(contas.mascara,11), dat = '31/12/2020', tmc = '1',
+valor_deb = if sum(debito) - sum(credito) > 0 then sum(debito) - sum(credito)
+              else 0
+            endif,
+valor_cre = if sum(debito) - sum(credito) < 0 then sum(credito) - sum(debito)
+              else 0
+            endif,
+tam = argn(grau_conta,1,2,3,4,5,7,9,11),
+contacorrente
+from lancamento_tempo l, sapo.contas 
+where contas.i_entidades = 1 and
+contas.i_plano_contas = 4 and
+left(contas.mascara,tam) = left(l.mascara,tam) and
+(contas.exerc_fin is null or 
+ (contas.exerc_fin = 2021 and
+  not exists(select 1 from sapo.contas cc
+             where cc.i_entidades = contas.i_entidades and
+                   cc.i_plano_contas = contas.i_plano_contas and
+                   left(cc.mascara,11) = left(contas.mascara,11) and
+                   cc.exerc_ini = 2022))) and
+left(contas.mascara,2) <> '52' and
+left(contas.mascara,2) <> '62'  and
+left(masca,4) not in(2371,5317,5327,6317,6327) and
+left(masca,5) not in(82114,63220)
+group by masca,  tam, contacorrente
+having valor_deb <> 0 or valor_cre <> 0
+
+union all
+
+select masca = left(contas.mascara,11), dat = '31/12/2020', tmc = '1',
+valor_deb = sum(debito),
+valor_cre = sum(credito),
+tam = argn(grau_conta,1,2,3,4,5,7,9,11),
+contacorrente
+from lancamento_tempo l, sapo.contas 
+where contas.i_entidades = 1 and
+contas.i_plano_contas = 4 and
+left(contas.mascara,tam) = left(l.mascara,tam) and
+(contas.exerc_fin is null or 
+ (contas.exerc_fin = 2021 and
+  not exists(select 1 from sapo.contas cc
+             where cc.i_entidades = contas.i_entidades and
+                   cc.i_plano_contas = contas.i_plano_contas and
+                   left(cc.mascara,11) = left(contas.mascara,11) and
+                   cc.exerc_ini = 2022))) and
+left(contas.mascara,2) <> '52' and
+left(contas.mascara,2) <> '62' and
+left(masca,4) in(2371,5317,5327,6317,6327)
+
+group by masca,  tam, contacorrente
+having valor_deb <> 0 or valor_cre <> 0
+
+order by masca) AS Tab
+group by masca
+order by masca;
+output to 'C:\ASSEMBLEIA\Movimento.txt' FORMAT ASCII QUOTE '' DELIMITED BY '';
+
+
+// gera lancamento
+
+select '<ROW ECTCE_Codigo="' + string(mascara) + '" LCDTCE_NumLancamento="29" LCDTCE_NumSequencial="' + string(number(*)) +
+'" MCC_Data="31/12/2020" TMC_Codigo="1" LCDTCE_ContaCorrente="' + 
+string(contacorrente) + 
+'" LCDTCE_ValorDebito="' + 
+string(valor_deb) + '" LCDTCE_ValorCredito="' + 
+string(valor_cre) + '" LCDTCE_Historico="Pelo saldo inicial no exercício"></ROW>'
+
+from (select mascara, contacorrente,
+valor_deb = if sum(debito) - sum(credito) > 0 then sum(debito) - sum(credito)
+              else 0
+            endif,
+valor_cre = if sum(debito) - sum(credito) < 0 then sum(credito) - sum(debito)
+              else 0
+            endif
+from lancamento_tempo
+where left(mascara,2) <> '52' and
+left(mascara,2) <> '62' and
+left(mascara,4) not in(2371,5317,5327,6317,6327) and
+left(mascara,5) not in(82114,63220)
+group by mascara,contacorrente
+having sum(debito) - sum(credito) <> 0
+
+union all
+
+select mascara, contacorrente,
+valor_deb = debito,
+valor_cre = credito
+from lancamento_tempo
+where left(mascara,2) <> '52' and
+left(mascara,2) <> '62' and
+left(mascara,4) in(2371,5317,5327,6317,6327)
+group by mascara,contacorrente, debito, credito
+
+order by mascara) as tab;
+output to 'C:\ASSEMBLEIA\Lancamento.txt' FORMAT ASCII QUOTE '' DELIMITED BY '';
+
+
+
+
+
+//somente para sapezal ---------------------------------------------------------------------------------------------
+
+
+/*
+update lancamento_tempo
+set contacorrente = left(contacorrente,if locate(contacorrente,'.0.1.') > 0 then 
+                         locate(contacorrente,'.0.1.')
+                else
+                         locate(contacorrente,'.0.3.')
+                endif  - 3) || '00' ||
+substr(contacorrente,if locate(contacorrente,'.0.1.') > 0 then 
+                         locate(contacorrente,'.0.1.')
+                else
+                         locate(contacorrente,'.0.3.')
+                endif,50)
+from lancamento_tempo     
+where left(mascara,2) in(53,63)and
+substr(contacorrente,if locate(contacorrente,'.0.1.') > 0 then 
+                         locate(contacorrente,'.0.1.')
+                else
+                         locate(contacorrente,'.0.3.')
+                endif - 5,2) not in('05','08','13','16','91','92','94');
+commit;
+
+
+update lancamento_tempo
+set contacorrente = left(contacorrente,length(contacorrente) - 1) ||
+              isnull(if substr(contacorrente,if locate(contacorrente,'.0.1.') > 0 then 
+                                                                      locate(contacorrente,'.0.1.')
+                                                               else
+                                                                      locate(contacorrente,'.0.3.')
+                                                               endif + 5,2) in('00','01') then
+                                               if substr(contacorrente,if locate(contacorrente,'.0.1.') > 0 then 
+                                                                          locate(contacorrente,'.0.1.')
+                                                                       else
+                                                                          locate(contacorrente,'.0.3.')
+                                                                      endif - 30,2) = '12' then
+                                                                          '1'
+                                               endif
+                                else 
+                                  if substr(contacorrente,if locate(contacorrente,'.0.1.') > 0 then 
+                                                                      locate(contacorrente,'.0.1.')
+                                                               else
+                                                                      locate(contacorrente,'.0.3.')
+                                                               endif + 5,2) in('00','02') then
+                                           if substr(contacorrente,if locate(contacorrente,'.0.1.') > 0 then 
+                                                                          locate(contacorrente,'.0.1.')
+                                                                       else
+                                                                          locate(contacorrente,'.0.3.')
+                                                                      endif - 30,2) = 10 then
+                                                             '2'
+                                           endif
+                                   else
+                                        '0'
+                                  endif
+                                endif,'0')
+from lancamento_tempo   
+where left(mascara,2) in(53,63);
+commit
+
+
+delete lancamento_tempo
+where left(mascara,5) = 82114;
+commit*/
+// -------------------------------------------------------------------------------------------------------
+
+
+

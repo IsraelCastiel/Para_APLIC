@@ -1,0 +1,5 @@
+CON93-4 ¿ No lançamento a crédito o tipo de movimentação financeira deve ser entre 201 e 299
+
+
+
+gera 105 mude para 299

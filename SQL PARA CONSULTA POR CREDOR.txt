@@ -1,0 +1,24 @@
+select li.i_empenhos,o.i_liquidacao,
+li.data_liquidacao,li.valor,o.data_pagamento,o.i_ordens,o.valor,c.nome,e.data_emissao as data_empenho from sapo.empenhos as e 
+key join sapo.credores as c
+key join sapo.ordens as o
+key join sapo.liquidacao as li
+where e.i_entidades = 1 
+and c.i_entidades = 1 
+and e.ano_exerc = 2019
+and o.i_entidades = 1 
+and li.i_entidades = 1
+and year(li.data_liquidacao) = 2019
+and month(li.data_liquidacao) in (4)
+and c.i_credores = 12767
+_______________________________________
+
+select * from sapo.liquidacao
+where ano_exerc = 2019 and i_entidades = 1
+and month(data_liquidacao)=8 and i_credores = 12767
+--historico like '%aplic%'
+
+select * from sapo.ordens
+where ano_exerc = 2019 and i_entidades = 1
+and month(data_pagamento)=8 and i_empenhos in (1914,3567)
+--historico like '%aplic%'

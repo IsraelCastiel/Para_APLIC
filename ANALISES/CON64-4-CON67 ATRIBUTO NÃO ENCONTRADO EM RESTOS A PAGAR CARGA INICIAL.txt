@@ -1,0 +1,7 @@
+CON67 - Os valores informados no campo LCDTCE_ContaCorrente para: Número do empenho, função, subfunção, categoria econômica, natureza da despesa, modalidade de aplicação, elemento de despesa, fonte de recurso e cadastro geral não foram encontrados na tabela INSCRICAO_RESTO_PAGAR
+CON64-4 - Resto a Pagar Processado(Empenho, Órgão, Unidade Orçamentária, Função, Subfunção, Fonte de Recurso e Credor) não localizado na tabela INSCRICAO_RESTO_PAGAR
+
+Para a carga inicial 
+
+No erro aponta que na lançamento não encontra alguns empenhos e na lançamento nota-se que esse empenho gerou tanto a debito quanto a credito zerando na lançamento
+Solução Excluir na lançamento

@@ -1,0 +1,3 @@
+REC16-2 - Receita 1.1.1.8.02.3.7.01.00.00 com saldo acumulado invertido
+
+certamente a rubrica de divida ativa esta diferente do que foi na carga inicial

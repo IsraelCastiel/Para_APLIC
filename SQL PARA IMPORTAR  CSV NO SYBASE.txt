@@ -1,0 +1,27 @@
+create table lancamento_contabil_diario_tce(ECTCE_Codigo as char(50),LCDTCE_Numlancamento_contabil_diario_tce as char(50),LCDTCE_NumSequencial as char(50),MCC_Data as char(50),TMC_Codigo as char(50),
+LCDTCE_ContaCorrente as char(255),LCDTCE_ValorDebito as char(50),LCDTCE_ValorCredito as char(50),LCDTCE_Historico as char(255));
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\99.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\01.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\02.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\03.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\04.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\05.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\06.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\07.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\08.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\09.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\10.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\11.csv' delimited by ';';
+input into lancamento_contabil_diario_tce from 'C:\ASSEMBLEIA\12.csv' delimited by ';';
+delete lancamento_contabil_diario_tce
+where ectce_codigo = 'ectce_codigo';
+update lancamento_contabil_diario_tce
+set lcdtce_valordebito = replace(lcdtce_valordebito,',','.'),
+lcdtce_valorcredito = replace(lcdtce_valorcredito,',','.');
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valorcredito numeric(14,2);
+commit;
+
+alter table lancamento_contabil_diario_tce modify lcdtce_valordebito numeric(14,2);
+commit;

@@ -1,0 +1,6 @@
+CON71-3 - Em um lançamento contábil não deve conter contas de execução de despesa 
+(62213010000) e arrecadação de receita (62120000000), exceto arrecadação de impostos.
+
+
+
+Separe os lançamentos nas coontas 6212 e 622 em um outro lançamento

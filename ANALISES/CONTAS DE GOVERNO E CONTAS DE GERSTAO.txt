@@ -1,0 +1,86 @@
+contas de gestão vai nas contas de encerramento
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DATAPACKET version="2.0">
+<METADATA><FIELDS>
+<FIELD attrname="DD_Numero" fieldtype="string" width="16"/>
+<FIELD attrname="DD_Exercicio" fieldtype="string" width="4"/>
+<FIELD attrname="DD_MesCompetencia" fieldtype="i4"/>
+<FIELD attrname="DD_TipoPeriodo" fieldtype="i4"/>
+<FIELD attrname="TDD_Codigo" fieldtype="i4"/>
+<FIELD attrname="DD_NomeArqPDF" fieldtype="string" width="19"/>
+</FIELDS>
+</METADATA>
+<ROWDATA>
+  <ROW DD_Numero="00000000001/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="1" DD_NomeArqPDF="DD_202013_00001.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000002/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="2" DD_NomeArqPDF="DD_202013_00002.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000003/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="3" DD_NomeArqPDF="DD_202013_00003.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000004/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="4" DD_NomeArqPDF="DD_202013_00004.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000005/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="5" DD_NomeArqPDF="DD_202013_00005.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000006/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="6" DD_NomeArqPDF="DD_202013_00006.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000007/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="7" DD_NomeArqPDF="DD_202013_00007.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000008/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="8" DD_NomeArqPDF="DD_202013_00008.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000009/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="9" DD_NomeArqPDF="DD_202013_00009.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000010/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="10" DD_NomeArqPDF="DD_202013_00010.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000011/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="11" DD_NomeArqPDF="DD_202013_00011.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000012/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="12" DD_NomeArqPDF="DD_202013_00012.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000013/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="14" DD_NomeArqPDF="DD_202013_00013.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000014/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="127" DD_NomeArqPDF="DD_202013_00014.pdf" DD_TipoPeriodo=""></ROW>
+  <ROW DD_Numero="00000000015/2020" DD_Exercicio="2020" DD_MesCompetencia="13" TDD_Codigo="129" DD_NomeArqPDF="DD_202013_00015.pdf" DD_TipoPeriodo=""></ROW>
+
+ </ROWDATA>
+</DATAPACKET>
+
+
+
+
+contas de governo até 16 de abril
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DATAPACKET ProtocoloTCE-MT='11775234533'  version="2.0">
+ <METADATA>
+  <FIELDS>
+   <FIELD attrname="DD_Numero" fieldtype="string" WIDTH="16"></FIELD>
+   <FIELD attrname="DD_Exercicio" fieldtype="string" WIDTH="4"></FIELD>
+   <FIELD attrname="DD_MesCompetencia" fieldtype="i4"></FIELD>
+   <FIELD attrname="TDD_Codigo" fieldtype="i4"></FIELD>
+   <FIELD attrname="DD_NomeArqPDF" fieldtype="string" WIDTH="19"></FIELD>
+    <FIELD attrname="DD_TipoPeriodo" fieldtype="i4"></FIELD>
+ </FIELDS>
+ </METADATA>
+ <ROWDATA>
+  <ROW DD_Numero="00000000001/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="1"   DD_NomeArqPDF="DD_202020_00001.pdf"></ROW>
+  <ROW DD_Numero="00000000002/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="2"   DD_NomeArqPDF="DD_202020_00002.pdf"></ROW>
+  <ROW DD_Numero="00000000014/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="14"  DD_NomeArqPDF="DD_202020_00014.pdf"></ROW>
+  <ROW DD_Numero="00000000015/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="15"  DD_NomeArqPDF="DD_202020_00015.pdf"></ROW>
+  <ROW DD_Numero="00000000016/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="16"  DD_NomeArqPDF="DD_202020_00016.pdf"></ROW>
+  <ROW DD_Numero="00000000017/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="17"  DD_NomeArqPDF="DD_202020_00017.pdf"></ROW>
+  <ROW DD_Numero="00000000018/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="18"  DD_NomeArqPDF="DD_202020_00018.pdf"></ROW>
+  <ROW DD_Numero="00000000019/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="19"  DD_NomeArqPDF="DD_202020_00019.pdf"></ROW>
+  <ROW DD_Numero="00000000020/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="20"  DD_NomeArqPDF="DD_202020_00020.pdf"></ROW>
+  <ROW DD_Numero="00000000021/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="21"  DD_NomeArqPDF="DD_202020_00021.pdf"></ROW>
+  <ROW DD_Numero="00000000022/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="22"  DD_NomeArqPDF="DD_202020_00022.pdf"></ROW>
+  <ROW DD_Numero="00000000023/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="23"  DD_NomeArqPDF="DD_202020_00023.pdf"></ROW>
+  <ROW DD_Numero="00000000024/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="24"  DD_NomeArqPDF="DD_202020_00024.pdf"></ROW>
+  <ROW DD_Numero="00000000025/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="25"  DD_NomeArqPDF="DD_202020_00025.pdf"></ROW>
+  <ROW DD_Numero="00000000026/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="26"  DD_NomeArqPDF="DD_202020_00026.pdf"></ROW>
+  <ROW DD_Numero="00000000027/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="27"  DD_NomeArqPDF="DD_202020_00027.pdf"></ROW>
+  <ROW DD_Numero="00000000028/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="28"  DD_NomeArqPDF="DD_202020_00028.pdf"></ROW>
+  <ROW DD_Numero="00000000029/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="29"  DD_NomeArqPDF="DD_202020_00029.pdf"></ROW>
+  <ROW DD_Numero="00000000030/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="30"  DD_NomeArqPDF="DD_202020_00030.pdf"></ROW>
+  <ROW DD_Numero="00000000031/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="31"  DD_NomeArqPDF="DD_202020_00031.pdf"></ROW>
+  <ROW DD_Numero="00000000032/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="32"  DD_NomeArqPDF="DD_202020_00032.pdf"></ROW>
+  <ROW DD_Numero="00000000033/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="33"  DD_NomeArqPDF="DD_202020_00033.pdf"></ROW>
+  <ROW DD_Numero="00000000034/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="34"  DD_NomeArqPDF="DD_202020_00034.pdf"></ROW>
+  <ROW DD_Numero="00000000035/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="35"  DD_NomeArqPDF="DD_202020_00035.pdf"></ROW>
+  <ROW DD_Numero="00000000036/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="36"  DD_NomeArqPDF="DD_202020_00036.pdf"></ROW>
+  <ROW DD_Numero="00000000037/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="37"  DD_NomeArqPDF="DD_202020_00037.pdf"></ROW>
+  <ROW DD_Numero="00000000038/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="38"  DD_NomeArqPDF="DD_202020_00038.pdf"></ROW>
+  <ROW DD_Numero="00000000039/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="39"  DD_NomeArqPDF="DD_202020_00039.pdf"></ROW>
+  <ROW DD_Numero="00000000128/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="128" DD_NomeArqPDF="DD_202020_00128.pdf"></ROW>
+  <ROW DD_Numero="00000000141/2020" DD_Exercicio="2021" DD_MesCompetencia="20" TDD_Codigo="141" DD_NomeArqPDF="DD_202020_00141.pdf"></ROW>
+  </ROWDATA>
+</DATAPACKET>
+
+
+

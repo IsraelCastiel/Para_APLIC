@@ -1,0 +1,8 @@
+ATI08-2 -vc vai ter q alterar a conta corrente de uma conta 621200000
+ 
+ pegue uma que possui a conta corrente de iptu por exemplo 1.1.1.2.02.01 e altere para 1.9.3.1.99.01.00
+ mas tem q ser no valor da diferença..esse lançamento tem que ser em um mesmo grupo de lançamento de uma receita
+
+  <ROW ECTCE_Codigo="62120000000" LCDTCE_NumLancamento="13772" LCDTCE_NumSequencial="1" MCC_Data="26/04/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="1.7.1.8.05.1.1.00.00.00|0|1|15|000000|02|00" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="16123.74" LCDTCE_Historico="Arrecada&#231;&#227;o 2583 (lote 777) da receita or&#231;ament&#225;ria 26 ref. Transfer&#234;ncias do Sal&#225;rio-Educa&#231;&#227;o - Principal (417180511000000)."></ROW>
+  <ROW ECTCE_Codigo="62120000000" LCDTCE_NumLancamento="13772" LCDTCE_NumSequencial="2" MCC_Data="26/04/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="1.1.1.8.02.3.3.01.00.00|0|1|46|000000|02|00" LCDTCE_ValorDebito="16123.74" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="Arrecada&#231;&#227;o 2583 (lote 777) da receita or&#231;ament&#225;ria 26 ref. Transfer&#234;ncias do Sal&#225;rio-Educa&#231;&#227;o - Principal (417180511000000)."></ROW>
+

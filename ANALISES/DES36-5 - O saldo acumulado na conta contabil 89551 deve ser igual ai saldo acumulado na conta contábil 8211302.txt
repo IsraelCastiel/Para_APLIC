@@ -1,0 +1,38 @@
+DES36-5 - O saldo acumulado na conta contabil 89551 deve ser igual ai saldo acumulado na conta contábil 8211302
+
+primeiro gera a lançamento de janeiro até o momento em que a regra surgiu 
+feito isso fitro somente os lançamentos das contas 89551 e 89552 com  LCDTCE_Historico="Pagamento da despesa extra XXXXXX batendo o debito e o credito do nun_lancamento insiro esses lançamentos no mês 3 
+
+depois disso verifico o saldo da conta  8211302 na carga inicial
+diminui o debito - credito ai debitar a conta 795500000 e credita a 89551
+
+
+
+   <ROW ECTCE_Codigo="79550000000" LCDTCE_NumLancamento="684" LCDTCE_NumSequencial="1" MCC_Data="22/03/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="" LCDTCE_ValorDebito="27039.61" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
+  <ROW ECTCE_Codigo="89551000000" LCDTCE_NumLancamento="684" LCDTCE_NumSequencial="2" MCC_Data="22/03/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="00|000|000000/2019" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="27039.61" LCDTCE_Historico="."></ROW>
+  
+  
+
+
+<ROW ECTCE_Codigo="70000000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="240482.28" MCC_ValorCredito="0.00"></ROW>
+<ROW ECTCE_Codigo="79000000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="240482.28" MCC_ValorCredito="0.00"></ROW>
+<ROW ECTCE_Codigo="79500000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="240482.28" MCC_ValorCredito="0.00"></ROW>
+<ROW ECTCE_Codigo="79550000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="240482.28" MCC_ValorCredito="0.00"></ROW>
+<ROW ECTCE_Codigo="80000000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="240482.28"></ROW>
+<ROW ECTCE_Codigo="89000000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="240482.28"></ROW>
+<ROW ECTCE_Codigo="89500000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="240482.28"></ROW>
+<ROW ECTCE_Codigo="89550000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="240482.28"></ROW>
+<ROW ECTCE_Codigo="89551000000" MCC_Data="29/03/2020" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="240482.28"></ROW>
+
+
+_____________________
+
+
+MOVIMENTO
+
+  <ROW ECTCE_Codigo="80000000000" MCC_Data="01/03/2020" TMC_Codigo="2" MCC_ValorDebito="76393.67" MCC_ValorCredito="76393.67"></ROW>
+  <ROW ECTCE_Codigo="89000000000" MCC_Data="01/03/2020" TMC_Codigo="2" MCC_ValorDebito="76393.67" MCC_ValorCredito="76393.67"></ROW>
+  <ROW ECTCE_Codigo="89500000000" MCC_Data="01/03/2020" TMC_Codigo="2" MCC_ValorDebito="76393.67" MCC_ValorCredito="76393.67"></ROW>
+  <ROW ECTCE_Codigo="89550000000" MCC_Data="01/03/2020" TMC_Codigo="2" MCC_ValorDebito="76393.67" MCC_ValorCredito="76393.67"></ROW>
+  <ROW ECTCE_Codigo="89551000000" MCC_Data="01/03/2020" TMC_Codigo="2" MCC_ValorDebito="76393.67" MCC_ValorCredito="0.00"></ROW>
+  <ROW ECTCE_Codigo="89552000000" MCC_Data="01/03/2020" TMC_Codigo="2" MCC_ValorDebito="0.00" MCC_ValorCredito="76393.67"></ROW>
