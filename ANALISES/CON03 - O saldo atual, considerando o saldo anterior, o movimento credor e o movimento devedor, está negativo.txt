@@ -8,6 +8,13 @@ vai existir uma conta do grupo 7 com a  mesma mascara..
 somente o primeiro digito q é 7 ao invés de 8...
 vc pode debitar ela e creditar a conta q está negativa..
 
+para o envio de contas de encerramento 
+no envio do encerramento so aceita 
+o lançamento na conta 8 a debito e credito na 7 
+sendo assim basta diminuir o valor em 
+uma conta 8 e 7 desta forma não precisa criar um lançamento novo
+ 
+
 
   <ROW ECTCE_Codigo="81221010100" LCDTCE_NumLancamento="64948" LCDTCE_NumSequencial="1" MCC_Data="11/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="00000000001/2020|00000000000/2020" LCDTCE_ValorDebito="0.00" LCDTCE_ValorCredito="77500.00" LCDTCE_Historico="."></ROW>
   <ROW ECTCE_Codigo="71221010000" LCDTCE_NumLancamento="64948" LCDTCE_NumSequencial="2" MCC_Data="11/10/2020" TMC_Codigo="2" LCDTCE_ContaCorrente="00000000001/2020|00000000000/2020" LCDTCE_ValorDebito="77500.00" LCDTCE_ValorCredito="0.00" LCDTCE_Historico="."></ROW>
