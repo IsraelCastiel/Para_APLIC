@@ -1,0 +1,15 @@
+DES19-33 - O Crédito Empenhado por [Órgão, Unidade, 
+Função, Subfunção, Programa, proj/Ativ, Categoria,
+Natureza, Grupo de Fonte 1 e Fonte] deve ser igual ou menor do que o 
+Crédito Disponível
+
+CON69-3 - Dotação (Órgão, Unidade Orçamentária, Função, Subfunção, Programa, 
+Projeto/Atividade, Cat. Econômica, Natureza de Despesa, Mod. de Aplicação, 
+Grupo e Especificação da fonte) não creditada na conta 
+62211(Tabela LANCAMENTO_CONTABIL_DIARIO_TCE, campo LCDTCE_ContaCorrente)
+
+para esse erro quando da atributo não encontrado na 
+dotação geralmente inserimos a despesa na dotação e enviamos 
+na mensal com o saldo zerado contudo fica faltando a 
+suplementação como credito especial então tem que gerar na alteração
+ loa e na lançamento que vai o credito na 62211..
